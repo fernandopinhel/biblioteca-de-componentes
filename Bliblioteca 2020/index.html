@@ -17,151 +17,166 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div class="example">
-            <h1>Input text</h1>
-            <div class="form">
-              <input type="text" name="text" autocomplete="off" required>
-              <label for="text" class="label-name">
-                  <span class="content-name">Nome</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="box">
-            <h2>HTML</h2>
-            <pre>
-              <code class="language-html" data-lang="html">
-                &lt;div class=&quot;form&quot;&gt;
-                  &lt;input type=&quot;text&quot; name=&quot;text&quot; autocomplete=&quot;off&quot; required&gt;
-                  &lt;label for=&quot;text&quot; class=&quot;label-name&quot;&gt;
-                      &lt;span class=&quot;content-name&quot;&gt;Nome&lt;/span&gt;
-                  &lt;/label&gt;
-                &lt;/div&gt;
-              </code>
-            </pre>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="box">
-            <h2>CSS</h2>
-            <pre>
-              <code class="language-html" data-lang="html">
-                .form {
-                  position: relative;
-                  height: 80px;
-                  overflow: hidden;
-                  width: 100%;
-                  margin: 0;
-                  padding: 0;
-                }
-
-
-                .form {
-                  input {
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                    background-color: transparent;
-                    padding-left: 0;
-                    color: $cinza-escuro;
-                    font-weight: 600;
-                  }
-                }
-
-
-                .form-control {
-                  color: $color-content;
-                  border: 1px solid #E6E6E6;
-                }
-
-                .form {
-                  label {
-                    position: absolute;
-                    bottom: 13px;
-                    left: 0px;
-                    width: 100%;
-                    height: 100%;
-                    pointer-events: none;
-                    border-bottom: 2px solid #E6E6E6;
-                    font-weight: 300;
-                  }
-                }
-
-                .form {
-                  label::after {
-                  content: "";
-                  position: absolute;
-                  bottom: -1px;
-                  left: 0px;
-                  width: 100%;
-                  height: 100%;
-                  border-bottom: 1px solid #BABABA;
-                  transform: translateX(-100%);
-                  transition: all 0.3s ease;
-                  }
-                }
-
-                .content-name {
-                  position: absolute;
-                  bottom: 0px;
-                  left: 0px;
-                  padding-bottom: 0!important;
-                  transition: all 0.3s ease;
-                  color: $color-content;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 16px;
-                }
-
-                .content-name {
-                  span:last-child {
-                    height: 22px;
-                  }
-                }
-
-                .form {
-                  input:focus {
-                    outline: none;
-                  }
-                }
-
-                .input::placeholder{
-                  color: $cinza-medio !important;
-                }
-
-                .input-date::placeholder{
-                  color: $color-content !important;
-                }
-
-                .form input:focus + .label-name .content-name,
-                .form input:valid + .label-name .content-name {
-                  transform: translateY(-100%);
-                  left: 0px;
-                  color: $cliente-light;
-                }
-
-                .form input:focus + .label-name::after,
-                .form input:valid + .label-name::after {
-                  transform: translateX(0%);
-                }
-
-                .form input:focus+.label-name .content-name{
-                  color: $cinza-medio;
-                }
-              </code>
-            </pre>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="componentes">Componentes</label>
+            <select class="form-control" name="componentes" id="componentes">
+              <option value="" selected>Selecione</option>
+              <option value="inputText">Input Text</option>
+              <option value="2-componente">Segundo componente</option>
+              <option value="3-componente">Terceiro componente</option>
+            </select>
           </div>
         </div>
       </div>
+      <section class="div-sel" id="inputText">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Input text</h1>
+              <div class="form">
+                <input type="text" name="text" autocomplete="off" required>
+                <label for="text" class="label-name">
+                    <span class="content-name">Nome</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;div class=&quot;form&quot;&gt;
+                    &lt;input type=&quot;text&quot; name=&quot;text&quot; autocomplete=&quot;off&quot; required&gt;
+                    &lt;label for=&quot;text&quot; class=&quot;label-name&quot;&gt;
+                        &lt;span class=&quot;content-name&quot;&gt;Nome&lt;/span&gt;
+                    &lt;/label&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  .form {
+                    position: relative;
+                    height: 80px;
+                    overflow: hidden;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                  }
+
+
+                  .form {
+                    input {
+                      width: 100%;
+                      height: 100%;
+                      border: none;
+                      background-color: transparent;
+                      padding-left: 0;
+                      color: $cinza-escuro;
+                      font-weight: 600;
+                    }
+                  }
+
+
+                  .form-control {
+                    color: $color-content;
+                    border: 1px solid #E6E6E6;
+                  }
+
+                  .form {
+                    label {
+                      position: absolute;
+                      bottom: 13px;
+                      left: 0px;
+                      width: 100%;
+                      height: 100%;
+                      pointer-events: none;
+                      border-bottom: 2px solid #E6E6E6;
+                      font-weight: 300;
+                    }
+                  }
+
+                  .form {
+                    label::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    border-bottom: 1px solid #BABABA;
+                    transform: translateX(-100%);
+                    transition: all 0.3s ease;
+                    }
+                  }
+
+                  .content-name {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    padding-bottom: 0!important;
+                    transition: all 0.3s ease;
+                    color: $color-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                  }
+
+                  .content-name {
+                    span:last-child {
+                      height: 22px;
+                    }
+                  }
+
+                  .form {
+                    input:focus {
+                      outline: none;
+                    }
+                  }
+
+                  .input::placeholder{
+                    color: $cinza-medio !important;
+                  }
+
+                  .input-date::placeholder{
+                    color: $color-content !important;
+                  }
+
+                  .form input:focus + .label-name .content-name,
+                  .form input:valid + .label-name .content-name {
+                    transform: translateY(-100%);
+                    left: 0px;
+                    color: $cliente-light;
+                  }
+
+                  .form input:focus + .label-name::after,
+                  .form input:valid + .label-name::after {
+                    transform: translateX(0%);
+                  }
+
+                  .form input:focus+.label-name .content-name{
+                    color: $cinza-medio;
+                  }
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
 
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/combo.js"></script>
   </body>
 </html>
