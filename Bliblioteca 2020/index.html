@@ -208,52 +208,26 @@
                   </form>
                 </div>
                   <div class="forgot"><a href="#">Esqueceu sua senha?</a></div>
-                  <div>
-                     <div class="cover-photo"></div>
-                     <div class="profile-photo"></div>
-                     <h1 class="welcome">Olá, Joe</h1>
-                     <a class="btn-goback" value="Refresh" onClick="history.go()">Voltar</a>
-                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="box">
               <h2>JS</h2>
+              <p>Usando: &lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
               <pre>
                 <code class="language-JavaScript" data-lang="JavaScript">
                   $(function() {
-                  	$(&quot;.btn&quot;).click(function() {
-                  		$(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
-                      $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
-                      $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
-                      $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
-                      $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
-                      $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
-                      $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
-                  	});
-                  });
-
-                  $(function() {
-                  	$(&quot;.btn-signup&quot;).click(function() {
-                    $(&quot;.nav&quot;).toggleClass(&quot;nav-up&quot;);
-                    $(&quot;.form-signup-left&quot;).toggleClass(&quot;form-signup-down&quot;);
-                    $(&quot;.success&quot;).toggleClass(&quot;success-left&quot;);
-                    $(&quot;.frame&quot;).toggleClass(&quot;frame-short&quot;);
-                  	});
-                  });
-
-                  $(function() {
-                  	$(&quot;.btn-signin&quot;).click(function() {
-                    $(&quot;.btn-animate&quot;).toggleClass(&quot;btn-animate-grow&quot;);
-                    $(&quot;.welcome&quot;).toggleClass(&quot;welcome-left&quot;);
-                    $(&quot;.cover-photo&quot;).toggleClass(&quot;cover-photo-down&quot;);
-                    $(&quot;.frame&quot;).toggleClass(&quot;frame-short&quot;);
-                    $(&quot;.profile-photo&quot;).toggleClass(&quot;profile-photo-down&quot;);
-                    $(&quot;.btn-goback&quot;).toggleClass(&quot;btn-goback-up&quot;);
-                    $(&quot;.forgot&quot;).toggleClass(&quot;forgot-fade&quot;);
-                  	});
-                  });
+                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
+                  	$(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
+                        $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
+                        $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
+                        $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
+                        $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
+                        $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
+                        $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
+                      });
+                    });
                 </code>
               </pre>
             </div>
@@ -261,61 +235,42 @@
           <div class="col-md-6">
             <div class="box">
               <h2>HTML</h2>
+              <p>Usando Bootstrap v4.2.1: &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
               <pre>
                 <code class="language-html" data-lang="html">
-                  &lt;div class=&quot;container&quot;&gt;
-                      &lt;div class=&quot;frame&quot;&gt;
-                        &lt;div class=&quot;nav&quot;&gt;
-                          &lt;ul class&quot;links&quot;&gt;
-                            &lt;li class=&quot;signin-active&quot;&gt;&lt;a class=&quot;btn&quot;&gt;Entrar&lt;/a&gt;&lt;/li&gt;
-                            &lt;li class=&quot;signup-inactive&quot;&gt;&lt;a class=&quot;btn&quot;&gt;Cadastre-se&lt;/a&gt;&lt;/li&gt;
-                          &lt;/ul&gt;
-                        &lt;/div&gt;
-                        &lt;div ng-app ng-init=&quot;checked = false&quot;&gt;
-                          &lt;form class=&quot;form-signin&quot; action=&quot;&quot; method=&quot;post&quot; name=&quot;form&quot;&gt;
-                            &lt;label for=&quot;username&quot;&gt;Usu&aacute;rio&lt;/label&gt;
-                            &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;&quot;/&gt;
-                            &lt;label for=&quot;password&quot;&gt;Senha&lt;/label&gt;
-                            &lt;input class=&quot;form-styling&quot; type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;&quot;/&gt;
-                            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot;/&gt;
-                            &lt;label for=&quot;checkbox&quot;&gt;&lt;span class=&quot;ui&quot;&gt;&lt;/span&gt;Mantenha-me conectado&lt;/label&gt;
-                            &lt;div class=&quot;btn-animate&quot;&gt;
-                              &lt;a class=&quot;btn-signin&quot;&gt;Entrar&lt;/a&gt;
-                            &lt;/div&gt;
-                          &lt;/form&gt;
-                          &lt;form class=&quot;form-signup&quot; action=&quot;&quot; method=&quot;post&quot; name=&quot;form&quot;&gt;
-                            &lt;label for=&quot;fullname&quot;&gt;Nome Completo&lt;/label&gt;
-                            &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;fullname&quot; placeholder=&quot;&quot;/&gt;
-                            &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-                            &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;&quot;/&gt;
-                            &lt;label for=&quot;password&quot;&gt;Senha&lt;/label&gt;
-                            &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;password&quot; placeholder=&quot;&quot;/&gt;
-                            &lt;label for=&quot;confirmpassword&quot;&gt;Confirme a senha&lt;/label&gt;
-                            &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;confirmpassword&quot; placeholder=&quot;&quot;/&gt;
-                            &lt;a ng-click=&quot;checked = !checked&quot; class=&quot;btn-signup&quot;&gt;&lt;span class=&quot;color-white&quot;&gt;Cadastrar&lt;/span&gt;&lt;/a&gt;
-                          &lt;/form&gt;
-                        &lt;/div&gt;
-                          &lt;div class=&quot;forgot&quot;&gt;&lt;a href=&quot;#&quot;&gt;Esqueceu sua senha?&lt;/a&gt;&lt;/div&gt;
-                          &lt;div&gt;
-                             &lt;div class=&quot;cover-photo&quot;&gt;&lt;/div&gt;
-                             &lt;div class=&quot;profile-photo&quot;&gt;&lt;/div&gt;
-                             &lt;h1 class=&quot;welcome&quot;&gt;Ol&aacute;, Joe&lt;/h1&gt;
-                             &lt;a class=&quot;btn-goback&quot; value=&quot;Refresh&quot; onClick=&quot;history.go()&quot;&gt;Voltar&lt;/a&gt;
-                         &lt;/div&gt;
-                      &lt;/div&gt;
-                      &lt;a id=&quot;refresh&quot; value=&quot;Refresh&quot; onClick=&quot;history.go()&quot;&gt;
-                         &lt;svg class=&quot;refreshicon&quot;   version=&quot;1.1&quot; id=&quot;Capa_1&quot;  xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;
-                              width=&quot;25px&quot; height=&quot;25px&quot; viewBox=&quot;0 0 322.447 322.447&quot; style=&quot;enable-background:new 0 0 322.447 322.447;&quot;
-                              xml:space=&quot;preserve&quot;&gt;
-                              &lt;path  d=&quot;M321.832,230.327c-2.133-6.565-9.184-10.154-15.75-8.025l-16.254,5.281C299.785,206.991,305,184.347,305,161.224
-                                     c0-84.089-68.41-152.5-152.5-152.5C68.411,8.724,0,77.135,0,161.224s68.411,152.5,152.5,152.5c6.903,0,12.5-5.597,12.5-12.5
-                                     c0-6.902-5.597-12.5-12.5-12.5c-70.304,0-127.5-57.195-127.5-127.5c0-70.304,57.196-127.5,127.5-127.5
-                                     c70.305,0,127.5,57.196,127.5,127.5c0,19.372-4.371,38.337-12.723,55.568l-5.553-17.096c-2.133-6.564-9.186-10.156-15.75-8.025
-                                     c-6.566,2.134-10.16,9.186-8.027,15.751l14.74,45.368c1.715,5.283,6.615,8.642,11.885,8.642c1.279,0,2.582-0.198,3.865-0.614
-                                     l45.369-14.738C320.371,243.946,323.965,236.895,321.832,230.327z&quot;/&gt;
-                         &lt;/svg&gt;
-                       &lt;/a&gt;
+                  &lt;div class=&quot;frame&quot;&gt;
+                    &lt;div class=&quot;nav nav-login&quot;&gt;
+                      &lt;ul class&quot;links&quot;&gt;
+                        &lt;li class=&quot;signin-active li-form-login&quot;&gt;&lt;a class=&quot;btn btn-entrar&quot;&gt;Entrar&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;signup-inactive li-form-login&quot;&gt;&lt;a class=&quot;btn btn-cadastra-se&quot;&gt;Cadastre-se&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
                     &lt;/div&gt;
+                    &lt;div ng-app ng-init=&quot;checked = false&quot;&gt;
+                      &lt;form class=&quot;form-signin&quot; action=&quot;&quot; method=&quot;post&quot; name=&quot;form&quot;&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;username&quot;&gt;Usu&aacute;rio&lt;/label&gt;
+                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;password&quot;&gt;Senha&lt;/label&gt;
+                        &lt;input class=&quot;form-styling&quot; type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot;/&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;checkbox&quot;&gt;&lt;span class=&quot;ui&quot;&gt;&lt;/span&gt;Mantenha-me conectado&lt;/label&gt;
+                        &lt;div class=&quot;btn-animate&quot;&gt;
+                          &lt;a class=&quot;btn-signin&quot;&gt;Entrar&lt;/a&gt;
+                        &lt;/div&gt;
+                      &lt;/form&gt;
+                      &lt;form class=&quot;form-signup&quot; action=&quot;&quot; method=&quot;post&quot; name=&quot;form&quot;&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;fullname&quot;&gt;Nome Completo&lt;/label&gt;
+                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;fullname&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;password&quot;&gt;Senha&lt;/label&gt;
+                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;password&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;label class=&quot;label-form-login&quot; for=&quot;confirmpassword&quot;&gt;Confirme a senha&lt;/label&gt;
+                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;confirmpassword&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;a ng-click=&quot;checked = !checked&quot; class=&quot;btn-signup&quot;&gt;&lt;span class=&quot;color-white&quot;&gt;Cadastrar&lt;/span&gt;&lt;/a&gt;
+                      &lt;/form&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;forgot&quot;&gt;&lt;a href=&quot;#&quot;&gt;Esqueceu sua senha?&lt;/a&gt;&lt;/div&gt;
+                  &lt;/div&gt;
                 </code>
               </pre>
             </div>
@@ -326,14 +281,14 @@
               <pre>
                 <code class="language-css" data-lang="css">
                   // form para tela de login
+
                   .frame {
                     height: 575px;
                     width: 430px;
                     background:
                       linear-gradient(
                       rgba(35,43,85,0.75),
-                      rgba(35,43,85,0.95)),
-                      url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+                      rgba(35,43,85,0.95));
                     background-size: cover;
                     margin-left: auto;
                     margin-right: auto;
@@ -354,7 +309,7 @@
                     box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
                   }
 
-                  .nav.nav-login {
+                  .nav.nav-login{
                     width: 100%;
                     height: 100px;
                     padding-top: 40px;
@@ -362,12 +317,8 @@
                     transition: all .5s ease;
                   }
 
-                  .nav-up {
-                    transform: translateY(-100px);
-                    opacity: 0;
-                  }
 
-                  li {
+                  li.li-form-login {
                     padding-left: 10px;
                     font-size: 18px;
                     display: inline;
@@ -450,31 +401,6 @@
                     opacity: 0;
                   }
 
-                  .success {
-                    width: 80%;
-                    height: 150px;
-                    text-align: center;
-                    position: relative;
-                    top: -890px;
-                    left: 450px;
-                    opacity: .0;
-                    transition: all .8s .4s ease;
-                  }
-
-                  .success-left {
-                    transform: translateX(-406px);
-                    opacity: 1;
-                  }
-
-                  .successtext {
-                    color: #ffffff;
-                  	font-size: 16px;
-                  	font-weight: 300;
-                    margin-top: -35px;
-                    padding-left: 37px;
-                    padding-right: 37px;
-                  }
-
                   #check path {
                     stroke: #ffffff;
                     stroke-linecap:round;
@@ -506,7 +432,8 @@
                     background: rgba(255,255,255,.2);
                   }
 
-                  label {
+                  label.label-form-login {
+                    text-align: left;
                     font-weight: 400;
                     text-transform: uppercase;
                     font-size: 13px;
@@ -516,8 +443,7 @@
                     display: block;
                   }
 
-                  :focus {outline: none;
-                  }
+                  :focus {outline: none;}
 
                   .form-signin input:focus, textarea:focus, .form-signup input:focus, textarea:focus {
                       background: rgba(255,255,255,.3);
@@ -526,14 +452,14 @@
                       transition: background .5s ease;
                    }
 
-                  [type="checkbox"]:not(:checked),
-                  [type="checkbox"]:checked {
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked),
+                  [type=&quot;checkbox&quot;]:checked {
                     position: absolute;
                     display: none;
                   }
 
-                  [type="checkbox"]:not(:checked) + label,
-                  [type="checkbox"]:checked + label {
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label,
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label {
                     position: relative;
                     padding-left: 85px;
                     padding-top: 2px;
@@ -541,16 +467,16 @@
                     margin-top: 8px;
                   }
 
-                  [type="checkbox"]:not(:checked) + label:before,
-                  [type="checkbox"]:checked + label:before,
-                  [type="checkbox"]:not(:checked) + label:after,
-                  [type="checkbox"]:checked + label:after {
-                    content: '';
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label:before,
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label:before,
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label:after,
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label:after {
+                    content: &#039;&#039;;
                     position: absolute;
                   }
 
-                  [type="checkbox"]:not(:checked) + label:before,
-                  [type="checkbox"]:checked + label:before {
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label:before,
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label:before {
                     width: 65px;
                     height: 30px;
                     background: rgba(255,255,255,.2);
@@ -560,8 +486,8 @@
                     transition: all .2s ease;
                   }
 
-                  [type="checkbox"]:not(:checked) + label:after,
-                  [type="checkbox"]:checked + label:after {
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label:after,
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label:after {
                     width: 10px;
                     height: 10px;
                     background: rgba(255,255,255,.7);
@@ -572,19 +498,19 @@
                   }
 
                   // on checked
-                  [type="checkbox"]:checked + label:before {
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label:before {
                     background: #0F4FE6;
                   }
 
-                  [type="checkbox"]:checked + label:after {
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label:after {
                     background: #ffffff;
                     top: 7px;
                     left: 45px;
                   }
 
-                  [type="checkbox"]:checked + label .ui,
-                  [type="checkbox"]:not(:checked) + label .ui:before,
-                  [type="checkbox"]:checked + label .ui:after {
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label .ui,
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label .ui:before,
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label .ui:after {
                     position: absolute;
                     left: 6px;
                     width: 65px;
@@ -595,18 +521,18 @@
                     transition: all .2s ease;
                   }
 
-                  [type="checkbox"]:not(:checked) + label .ui:before {
-                    content: "não";
+                  #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label .ui:before {
+                    content: &quot;n&atilde;o&quot;;
                     left: 25px;
                     color: rgba(255,255,255,.7);
                   }
 
-                  [type="checkbox"]:checked + label .ui:after {
-                    content: "sim";
+                  #checkbox[type=&quot;checkbox&quot;]:checked + label .ui:after {
+                    content: &quot;sim&quot;;
                     color: #ffffff;
                   }
 
-                  [type="checkbox"]:focus + label:before {
+                  #checkbox[type=&quot;checkbox&quot;]:focus + label:before {
                     box-sizing: border-box;
                     margin-top: -1px;
                   }
@@ -700,130 +626,9 @@
                     text-decoration: none;
                   }
 
-                  .welcome {
-                    width: 100%;
-                    height: 50px;
-                    position: relative;
-                    color: rgba(35,43,85,0.75);
-                    opacity: 0;
-                    transition: transform 1.5s ease .25s, opacity .1s ease 1s;
-                  }
-
-                  .welcome-left {
-                    transform: translateY(-780px);
-                    opacity: 1;
-                  }
-
-                  .cover-photo {
-                    height: 150px;
-                    position: relative;
-                    left: 0px;  top: -900px;
-                    background:
-                      linear-gradient(
-                      rgba(35,43,85,0.75),
-                      rgba(35,43,85,0.95)),
-                      url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/landscape-nature-man-person.jpeg);
-                    background-size: cover;
-                    opacity: 0;
-                    transition: all 1.5s ease 0.55s;
-                  }
-
-                  .cover-photo-down {
-                    top: -575px;
-                    opacity: 1;
-                  }
-
-                  .profile-photo {
-                    height: 125px;
-                    width: 125px;
-                    position: relative;
-                    border-radius: 70px;
-                    left: 155px;
-                    top: -1000px;
-                    background: url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/nature-water-rocks-hiking.jpg);
-                    background-size: 100% 135%;
-                    background-position: 100% 100%;
-                    opacity: 0;
-                    transition: top 1.5s ease 0.35s, opacity .75s ease .5s;
-                    border: solid 3px #ffffff;
-                  }
-
-                  .profile-photo-down {
-                    top: -636px;
-                    opacity: 1;
-                  }
-
-                  h1.welcome {
-                    font-size: 35px;
-                  	font-weight: 300;
-                    text-align: center;
-                  }
-
-                  .btn-goback {
-                    position: relative;
-                    margin-right: auto;
-                    top: -400px;
-                    float: left;
-                    padding: 8px;
-                    width: 83%;
-                    margin-left: 37px;
-                    margin-right: 37px;
-                    height: 35px;
-                  	border-radius: 20px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    font-size: 13px;
-                    text-align: center;
-                    color: #1059FF;
-                    margin-top: -8px;
-                    border: solid 1px #1059FF;
-                    opacity: 0;
-                    transition: top 1.5s ease 0.35s, opacity .75s ease .5s;
-                  }
-
-                  .btn-goback-up {
-                    top: -1120px;
-                    opacity: 1;
-                  }
-
-                  a.btn-goback:hover {
-                      cursor: pointer;
-                      background-color: #0F4FE6;
-                      transition: all .5s;
-                      color: #ffffff;
-                  }
-
                   .color-white{
                       color: #fff;
                   }
-
-                  // botao refresh
-
-                  #refresh {
-                      position: fixed;
-                      bottom: 20px;
-                      right: 20px;
-                      background-color: #ffffff;
-                      width: 50px;
-                      height: 50px;
-                      border-radius: 25px;
-                      box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
-                      padding: 13px 0 0 13px;
-                  }
-
-                  .refreshicon {
-                      fill: #d3d3d3;
-                      transform: rotate(0deg);
-                      transition: fill .25s ease, transform .25s ease;
-                  }
-
-                  .refreshicon:hover {
-                    cursor: pointer;
-                    fill: #1059FF;
-                    transform: rotate(180deg);
-                  }
-
-                  // fim botao refresh
 
                   // fim form para tela de login
                 </code>

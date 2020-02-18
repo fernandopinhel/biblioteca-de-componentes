@@ -22,8 +22,13 @@ h1{
   color:$primaria-bradesco;
 }
 
-h2{
+.box > h2{
   background: #f5f5f5;
+  padding: 10px;
+}
+
+.box > p{
+  background: #FBFBFB;
   padding: 10px;
 }
 
@@ -163,8 +168,7 @@ h2{
   background:
     linear-gradient(
     rgba(35,43,85,0.75),
-    rgba(35,43,85,0.95)),
-    url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+    rgba(35,43,85,0.95));
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
@@ -193,10 +197,6 @@ h2{
   transition: all .5s ease;
 }
 
-.nav-up {
-  transform: translateY(-100px);
-  opacity: 0;
-}
 
 li.li-form-login {
   padding-left: 10px;
@@ -281,31 +281,6 @@ li.li-form-login {
   opacity: 0;
 }
 
-.success {
-  width: 80%;
-  height: 150px;
-  text-align: center;
-  position: relative;
-  top: -890px;
-  left: 450px;
-  opacity: .0;
-  transition: all .8s .4s ease;
-}
-
-.success-left {
-  transform: translateX(-406px);
-  opacity: 1;
-}
-
-.successtext {
-  color: #ffffff;
-	font-size: 16px;
-	font-weight: 300;
-  margin-top: -35px;
-  padding-left: 37px;
-  padding-right: 37px;
-}
-
 #check path {
   stroke: #ffffff;
   stroke-linecap:round;
@@ -348,8 +323,7 @@ label.label-form-login {
   display: block;
 }
 
-:focus {outline: none;
-}
+:focus {outline: none;}
 
 .form-signin input:focus, textarea:focus, .form-signup input:focus, textarea:focus {
     background: rgba(255,255,255,.3);
@@ -358,14 +332,14 @@ label.label-form-login {
     transition: background .5s ease;
  }
 
-[type="checkbox"]:not(:checked),
+#checkbox[type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   display: none;
 }
 
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+#checkbox[type="checkbox"]:not(:checked) + label,
+#checkbox[type="checkbox"]:checked + label {
   position: relative;
   padding-left: 85px;
   padding-top: 2px;
@@ -373,16 +347,16 @@ label.label-form-login {
   margin-top: 8px;
 }
 
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before,
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+#checkbox[type="checkbox"]:not(:checked) + label:before,
+#checkbox[type="checkbox"]:checked + label:before,
+#checkbox[type="checkbox"]:not(:checked) + label:after,
+#checkbox[type="checkbox"]:checked + label:after {
   content: '';
   position: absolute;
 }
 
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+#checkbox[type="checkbox"]:not(:checked) + label:before,
+#checkbox[type="checkbox"]:checked + label:before {
   width: 65px;
   height: 30px;
   background: rgba(255,255,255,.2);
@@ -392,8 +366,8 @@ label.label-form-login {
   transition: all .2s ease;
 }
 
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+#checkbox[type="checkbox"]:not(:checked) + label:after,
+#checkbox[type="checkbox"]:checked + label:after {
   width: 10px;
   height: 10px;
   background: rgba(255,255,255,.7);
@@ -404,19 +378,19 @@ label.label-form-login {
 }
 
 // on checked
-[type="checkbox"]:checked + label:before {
+#checkbox[type="checkbox"]:checked + label:before {
   background: #0F4FE6;
 }
 
-[type="checkbox"]:checked + label:after {
+#checkbox[type="checkbox"]:checked + label:after {
   background: #ffffff;
   top: 7px;
   left: 45px;
 }
 
-[type="checkbox"]:checked + label .ui,
-[type="checkbox"]:not(:checked) + label .ui:before,
-[type="checkbox"]:checked + label .ui:after {
+#checkbox[type="checkbox"]:checked + label .ui,
+#checkbox[type="checkbox"]:not(:checked) + label .ui:before,
+#checkbox[type="checkbox"]:checked + label .ui:after {
   position: absolute;
   left: 6px;
   width: 65px;
@@ -427,18 +401,18 @@ label.label-form-login {
   transition: all .2s ease;
 }
 
-[type="checkbox"]:not(:checked) + label .ui:before {
+#checkbox[type="checkbox"]:not(:checked) + label .ui:before {
   content: "não";
   left: 25px;
   color: rgba(255,255,255,.7);
 }
 
-[type="checkbox"]:checked + label .ui:after {
+#checkbox[type="checkbox"]:checked + label .ui:after {
   content: "sim";
   color: #ffffff;
 }
 
-[type="checkbox"]:focus + label:before {
+#checkbox[type="checkbox"]:focus + label:before {
   box-sizing: border-box;
   margin-top: -1px;
 }
@@ -499,9 +473,9 @@ label.label-form-login {
 }
 
 a.btn-signup:hover, a.btn-signin:hover {
-    cursor: pointer;
-    background-color: #0F4FE6;
-    transition: background-color .5s;
+  cursor: pointer;
+  background-color: #0F4FE6;
+  transition: background-color .5s;
 }
 
 .forgot {
@@ -532,129 +506,8 @@ a.btn-signup:hover, a.btn-signin:hover {
   text-decoration: none;
 }
 
-.welcome {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  color: rgba(35,43,85,0.75);
-  opacity: 0;
-  transition: transform 1.5s ease .25s, opacity .1s ease 1s;
-}
-
-.welcome-left {
-  transform: translateY(-780px);
-  opacity: 1;
-}
-
-.cover-photo {
-  height: 150px;
-  position: relative;
-  left: 0px;  top: -900px;
-  background:
-    linear-gradient(
-    rgba(35,43,85,0.75),
-    rgba(35,43,85,0.95)),
-    url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/landscape-nature-man-person.jpeg);
-  background-size: cover;
-  opacity: 0;
-  transition: all 1.5s ease 0.55s;
-}
-
-.cover-photo-down {
-  top: -575px;
-  opacity: 1;
-}
-
-.profile-photo {
-  height: 125px;
-  width: 125px;
-  position: relative;
-  border-radius: 70px;
-  left: 155px;
-  top: -1000px;
-  background: url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/nature-water-rocks-hiking.jpg);
-  background-size: 100% 135%;
-  background-position: 100% 100%;
-  opacity: 0;
-  transition: top 1.5s ease 0.35s, opacity .75s ease .5s;
-  border: solid 3px #ffffff;
-}
-
-.profile-photo-down {
-  top: -636px;
-  opacity: 1;
-}
-
-h1.welcome {
-  font-size: 35px;
-	font-weight: 300;
-  text-align: center;
-}
-
-.btn-goback {
-  position: relative;
-  margin-right: auto;
-  top: -400px;
-  float: left;
-  padding: 8px;
-  width: 83%;
-  margin-left: 37px;
-  margin-right: 37px;
-  height: 35px;
-	border-radius: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 13px;
-  text-align: center;
-  color: #1059FF;
-  margin-top: -8px;
-  border: solid 1px #1059FF;
-  opacity: 0;
-  transition: top 1.5s ease 0.35s, opacity .75s ease .5s;
-}
-
-.btn-goback-up {
-  top: -1120px;
-  opacity: 1;
-}
-
-a.btn-goback:hover {
-    cursor: pointer;
-    background-color: #0F4FE6;
-    transition: all .5s;
-    color: #ffffff;
-}
-
 .color-white{
     color: #fff;
 }
-
-// botao refresh
-
-#refresh {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ffffff;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
-    padding: 13px 0 0 13px;
-}
-
-.refreshicon {
-    fill: #d3d3d3;
-    transform: rotate(0deg);
-    transition: fill .25s ease, transform .25s ease;
-}
-
-.refreshicon:hover {
-  cursor: pointer;
-  fill: #1059FF;
-  transform: rotate(180deg);
-}
-
-// fim botao refresh
 
 // fim form para tela de login
