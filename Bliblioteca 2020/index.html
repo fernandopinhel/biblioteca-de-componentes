@@ -185,10 +185,18 @@
                 </div>
                 <div ng-app ng-init="checked = false">
                   <form class="form-signin" action="" method="post" name="form">
-                    <label class="label-form-login" for="username">Usuário</label>
-                    <input class="form-styling" type="text" name="username" placeholder=""/>
-                    <label class="label-form-login" for="password">Senha</label>
-                    <input class="form-styling" type="password" name="password" placeholder=""/>
+                    <div class="form-login">
+                      <input type="text" name="text" autocomplete="off" required>
+                      <label for="text" class="label-name">
+                          <span class="content-name">Nome</span>
+                      </label>
+                    </div>
+                    <div class="form-login">
+                      <input class="no-tab" type="password" name="password" autocomplete="off" required>
+                      <label for="password" class="label-name">
+                          <span class="content-name">Senha</span>
+                      </label>
+                    </div>
                     <input type="checkbox" id="checkbox"/>
                     <label class="label-form-login" for="checkbox"><span class="ui"></span>Mantenha-me conectado</label>
                     <div class="btn-animate">
@@ -196,14 +204,30 @@
                     </div>
                   </form>
                   <form class="form-signup" action="" method="post" name="form">
-                    <label class="label-form-login" for="fullname">Nome Completo</label>
-                    <input class="form-styling" type="text" name="fullname" placeholder=""/>
-                    <label class="label-form-login" for="email">Email</label>
-                    <input class="form-styling" type="text" name="email" placeholder=""/>
-                    <label class="label-form-login" for="password">Senha</label>
-                    <input class="form-styling" type="text" name="password" placeholder=""/>
-                    <label class="label-form-login" for="confirmpassword">Confirme a senha</label>
-                    <input class="form-styling" type="text" name="confirmpassword" placeholder=""/>
+                    <div class="form-login">
+                      <input type="text" name="text" autocomplete="off" required>
+                      <label for="text" class="label-name">
+                          <span class="content-name">Nome completo</span>
+                      </label>
+                    </div>
+                    <div class="form-login">
+                      <input type="text" name="text" autocomplete="off" required>
+                      <label for="text" class="label-name">
+                          <span class="content-name">Email</span>
+                      </label>
+                    </div>
+                    <div class="form-login">
+                      <input type="password" name="password" autocomplete="off" required>
+                      <label for="password" class="label-name">
+                          <span class="content-name">Senha</span>
+                      </label>
+                    </div>
+                    <div class="form-login">
+                      <input type="password" name="password" autocomplete="off" required>
+                      <label for="password" class="label-name">
+                          <span class="content-name">Confirmar senha</span>
+                      </label>
+                    </div>
                     <a ng-click="checked = !checked" class="btn-signup"><span class="color-white">Cadastrar</span></a>
                   </form>
                 </div>
@@ -217,17 +241,32 @@
               <p>Usando: &lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
               <pre>
                 <code class="language-JavaScript" data-lang="JavaScript">
-                  $(function() {
-                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
-                  	$(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
-                        $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
-                        $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
-                        $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
-                        $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
-                        $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
-                        $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
-                      });
-                    });
+                $(function() {
+                  $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
+                    $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
+                    $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
+                    $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
+                    $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
+                    $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
+                    $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
+                    $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
+                  });
+                });
+
+                // desativando a tecla tab do campo password pois enfrentava problema
+                $(function(){
+                  $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
+                    // use which ou charCode ou e.keyCode, dependendo do navegador
+                    var key = e.which || e.charCode || e.keyCode;
+                    // 9 &eacute; o caracter Unicode da tecla TAB
+                    if (key === 9) {
+                    if (e.preventDefault) {
+                    		e.preventDefault();
+                    }
+                    return false;
+                    }
+                  });
+                });
                 </code>
               </pre>
             </div>
@@ -247,10 +286,18 @@
                     &lt;/div&gt;
                     &lt;div ng-app ng-init=&quot;checked = false&quot;&gt;
                       &lt;form class=&quot;form-signin&quot; action=&quot;&quot; method=&quot;post&quot; name=&quot;form&quot;&gt;
-                        &lt;label class=&quot;label-form-login&quot; for=&quot;username&quot;&gt;Usu&aacute;rio&lt;/label&gt;
-                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;&quot;/&gt;
-                        &lt;label class=&quot;label-form-login&quot; for=&quot;password&quot;&gt;Senha&lt;/label&gt;
-                        &lt;input class=&quot;form-styling&quot; type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;div class=&quot;form-login&quot;&gt;
+                          &lt;input type=&quot;text&quot; name=&quot;text&quot; autocomplete=&quot;off&quot; required&gt;
+                          &lt;label for=&quot;text&quot; class=&quot;label-name&quot;&gt;
+                              &lt;span class=&quot;content-name&quot;&gt;Nome&lt;/span&gt;
+                          &lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-login&quot;&gt;
+                          &lt;input class=&quot;no-tab&quot; type=&quot;password&quot; name=&quot;password&quot; autocomplete=&quot;off&quot; required&gt;
+                          &lt;label for=&quot;password&quot; class=&quot;label-name&quot;&gt;
+                              &lt;span class=&quot;content-name&quot;&gt;Senha&lt;/span&gt;
+                          &lt;/label&gt;
+                        &lt;/div&gt;
                         &lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot;/&gt;
                         &lt;label class=&quot;label-form-login&quot; for=&quot;checkbox&quot;&gt;&lt;span class=&quot;ui&quot;&gt;&lt;/span&gt;Mantenha-me conectado&lt;/label&gt;
                         &lt;div class=&quot;btn-animate&quot;&gt;
@@ -258,14 +305,30 @@
                         &lt;/div&gt;
                       &lt;/form&gt;
                       &lt;form class=&quot;form-signup&quot; action=&quot;&quot; method=&quot;post&quot; name=&quot;form&quot;&gt;
-                        &lt;label class=&quot;label-form-login&quot; for=&quot;fullname&quot;&gt;Nome Completo&lt;/label&gt;
-                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;fullname&quot; placeholder=&quot;&quot;/&gt;
-                        &lt;label class=&quot;label-form-login&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
-                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;&quot;/&gt;
-                        &lt;label class=&quot;label-form-login&quot; for=&quot;password&quot;&gt;Senha&lt;/label&gt;
-                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;password&quot; placeholder=&quot;&quot;/&gt;
-                        &lt;label class=&quot;label-form-login&quot; for=&quot;confirmpassword&quot;&gt;Confirme a senha&lt;/label&gt;
-                        &lt;input class=&quot;form-styling&quot; type=&quot;text&quot; name=&quot;confirmpassword&quot; placeholder=&quot;&quot;/&gt;
+                        &lt;div class=&quot;form-login&quot;&gt;
+                          &lt;input type=&quot;text&quot; name=&quot;text&quot; autocomplete=&quot;off&quot; required&gt;
+                          &lt;label for=&quot;text&quot; class=&quot;label-name&quot;&gt;
+                              &lt;span class=&quot;content-name&quot;&gt;Nome completo&lt;/span&gt;
+                          &lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-login&quot;&gt;
+                          &lt;input type=&quot;text&quot; name=&quot;text&quot; autocomplete=&quot;off&quot; required&gt;
+                          &lt;label for=&quot;text&quot; class=&quot;label-name&quot;&gt;
+                              &lt;span class=&quot;content-name&quot;&gt;Email&lt;/span&gt;
+                          &lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-login&quot;&gt;
+                          &lt;input type=&quot;password&quot; name=&quot;password&quot; autocomplete=&quot;off&quot; required&gt;
+                          &lt;label for=&quot;password&quot; class=&quot;label-name&quot;&gt;
+                              &lt;span class=&quot;content-name&quot;&gt;Senha&lt;/span&gt;
+                          &lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-login&quot;&gt;
+                          &lt;input type=&quot;password&quot; name=&quot;password&quot; autocomplete=&quot;off&quot; required&gt;
+                          &lt;label for=&quot;password&quot; class=&quot;label-name&quot;&gt;
+                              &lt;span class=&quot;content-name&quot;&gt;Confirmar senha&lt;/span&gt;
+                          &lt;/label&gt;
+                        &lt;/div&gt;
                         &lt;a ng-click=&quot;checked = !checked&quot; class=&quot;btn-signup&quot;&gt;&lt;span class=&quot;color-white&quot;&gt;Cadastrar&lt;/span&gt;&lt;/a&gt;
                       &lt;/form&gt;
                     &lt;/div&gt;
@@ -285,10 +348,7 @@
                   .frame {
                     height: 575px;
                     width: 430px;
-                    background:
-                      linear-gradient(
-                      rgba(35,43,85,0.75),
-                      rgba(35,43,85,0.95));
+                    background: linear-gradient(rgba(35,43,85,0.75),rgba(35,43,85,0.95));
                     background-size: cover;
                     margin-left: auto;
                     margin-right: auto;
@@ -299,9 +359,7 @@
                     transition: all .5s ease;
                   }
 
-                  .frame-long {
-                    height: 615px;
-                  }
+                  .frame-long {height: 615px;}
 
                   .frame-short {
                     height: 400px;
@@ -317,6 +375,11 @@
                     transition: all .5s ease;
                   }
 
+                  .nav.nav-login ul{
+                    text-align: center;
+                    width: 100%;
+                    padding: 0;
+                  }
 
                   li.li-form-login {
                     padding-left: 10px;
@@ -360,6 +423,83 @@
                     transition: all .25s ease;
                   }
 
+                  .form-login {
+                    position: relative;
+                    height: 80px;
+                    overflow: hidden;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                  }
+
+                  .form-login {
+                    label {
+                      position: absolute;
+                      bottom: 13px;
+                      left: 0px;
+                      width: 100%;
+                      height: 100%;
+                      pointer-events: none;
+                      border-bottom: 1px solid #E6E6E6;
+                      font-weight: 300;
+                    }
+                  }
+
+                  .form-login {
+                    label::after {
+                    content: &quot;&quot;;
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    border-bottom: 2px solid #BABABA;
+                    transform: translateX(-100%);
+                    transition: all 0.3s ease;
+                    }
+                  }
+
+                  .form-login label span.content-name {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 0px;
+                    padding-bottom: 0!important;
+                    transition: all 0.3s ease;
+                    color: #fff !important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                  }
+
+                  .form-login &gt; .content-name {
+                    span:last-child {
+                      height: 22px;
+                    }
+                  }
+
+                  .form-login {
+                    input:focus {
+                      outline: none;
+                    }
+                  }
+
+                  .form-login input:focus + .label-name .content-name,
+                  .form-login input:valid + .label-name .content-name {
+                    transform: translateY(-100%);
+                    left: 0px;
+                    color: #fff;
+                  }
+
+                  .form-login input:focus + .label-name::after,
+                  .form-login input:valid + .label-name::after {
+                    transform: translateX(0%);
+                  }
+
+                  .form-login input:focus+.label-name .content-name{
+                    color: #fff;
+                  }
+
                   .form-signin {
                     width: 430px;
                     height: 375px;
@@ -367,7 +507,7 @@
                   	font-weight: 300;
                     padding-left: 37px;
                     padding-right: 37px;
-                    padding-top: 55px;
+                    padding-top: 35px;
                     transition: opacity .5s ease, transform .5s ease;
                   }
 
@@ -383,7 +523,7 @@
                   	font-weight: 300;
                     padding-left: 37px;
                     padding-right: 37px;
-                    padding-top: 55px;
+                    padding-top: 35px;
                     position: relative;
                     top: -375px;
                     left: 400px;
@@ -399,6 +539,16 @@
                   .form-signup-down {
                     top: 0px;
                     opacity: 0;
+                  }
+
+                  .form-login input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background-color: transparent !important;
+                    padding-left: 0;
+                    color: #fff;
+                    font-weight: 600;
                   }
 
                   #check path {
@@ -420,16 +570,7 @@
                   .form-signin input, .form-signup input {
                     color: #ffffff;
                     font-size: 13px;
-                  }
-
-                  .form-styling {
-                    width: 100%;
-                    height: 35px;
-                  	padding-left: 15px;
-                  	border: none;
-                  	border-radius: 20px;
-                    margin-bottom: 20px;
-                    background: rgba(255,255,255,.2);
+                    font-weight: 100;
                   }
 
                   label.label-form-login {
@@ -446,10 +587,10 @@
                   :focus {outline: none;}
 
                   .form-signin input:focus, textarea:focus, .form-signup input:focus, textarea:focus {
-                      background: rgba(255,255,255,.3);
-                      border: none;
-                      padding-right: 40px;
-                      transition: background .5s ease;
+                    background: rgba(255,255,255,.3);
+                    border: none;
+                    padding-right: 40px;
+                    transition: background .5s ease;
                    }
 
                   #checkbox[type=&quot;checkbox&quot;]:not(:checked),
@@ -462,9 +603,9 @@
                   #checkbox[type=&quot;checkbox&quot;]:checked + label {
                     position: relative;
                     padding-left: 85px;
-                    padding-top: 2px;
+                    padding-top: 1px;
                     cursor: pointer;
-                    margin-top: 8px;
+                    margin-top: 30px;
                   }
 
                   #checkbox[type=&quot;checkbox&quot;]:not(:checked) + label:before,
@@ -627,7 +768,7 @@
                   }
 
                   .color-white{
-                      color: #fff;
+                    color: #fff;
                   }
 
                   // fim form para tela de login
