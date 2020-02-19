@@ -237,38 +237,60 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Observações para usar o componente</h5>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/login-form.js&quot;&gt;&lt;/script&gt;</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Baixar arquivos:</h5>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/form-tela-login.zip" target="_blank">Slider/Carousel</a></p>
+            </div>
+          </div>
           <div class="col-md-6">
             <div class="box">
               <h2>JS</h2>
-              <p>Usando: &lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>login-form.js</p>
               <pre>
                 <code class="language-JavaScript" data-lang="JavaScript">
-                $(function() {
-                  $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
-                    $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
-                    $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
-                    $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
-                    $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
-                    $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
-                    $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
-                    $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
+                  $(function() {
+                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
+                      $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
+                      $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
+                      $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
+                      $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
+                      $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
+                      $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
+                      $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
+                    });
                   });
-                });
 
-                // desativando a tecla tab do campo password pois enfrentava problema
-                $(function(){
-                  $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
-                    // use which ou charCode ou e.keyCode, dependendo do navegador
-                    var key = e.which || e.charCode || e.keyCode;
-                    // 9 &eacute; o caracter Unicode da tecla TAB
-                    if (key === 9) {
-                    if (e.preventDefault) {
-                    		e.preventDefault();
-                    }
-                    return false;
-                    }
+                  // desativando a tecla tab do campo password pois enfrentava problema
+                  $(function(){
+                    $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
+                      // use which ou charCode ou e.keyCode, dependendo do navegador
+                      var key = e.which || e.charCode || e.keyCode;
+                      // 9 &eacute; o caracter Unicode da tecla TAB
+                      if (key === 9) {
+                      if (e.preventDefault) {
+                      		e.preventDefault();
+                      }
+                      return false;
+                      }
+                    });
                   });
-                });
                 </code>
               </pre>
             </div>
@@ -276,7 +298,6 @@
           <div class="col-md-6">
             <div class="box">
               <h2>HTML</h2>
-              <p>Usando Bootstrap v4.2.1: &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
               <pre>
                 <code class="language-html" data-lang="html">
                   &lt;div class=&quot;frame&quot;&gt;
@@ -343,6 +364,7 @@
           <div class="col-md-6">
             <div class="box">
               <h2>CSS</h2>
+              <p>estilo.css</p>
               <pre>
                 <code class="language-css" data-lang="css">
                   // form para tela de login
@@ -915,23 +937,31 @@
               </div>
             </div>
           </div>
-          <div class="col-12 mb-5">
+          <div class="col-md-6 mb-5">
             <div class="box">
               <h5>Observações para usar o componente</h5>
               <h6>Chamar no head do html:</h6>
-              <p>CSS do Bootstrap v4.2.1: &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>CSS do componente do swiper.min.css &lt;link rel=&quot;stylesheet&quot; href=&quot;css/swiper.min.css&quot;&gt;</p>
-              <p>CSS do estilo.css do componente &lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/swiper.min.css&quot;&gt;</p>
               <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>JS do Jquery Slim Min 3.3.1: &lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>JS do Popper Min: &lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>JS do Bootstrap v4.2.1: &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>JS do Swiper Min: &lt;script src=&quot;js/swiper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>JS Config swiper: &lt;script src=&quot;js/config-swiper.js&quot;&gt;&lt;/script&gt;</p>
-              <h6>Baixar arquivos:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/swiper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/config-swiper.js&quot;&gt;&lt;/script&gt;</p>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Baixar arquivos:</h5>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/slider-carousel.zip" target="_blank">Slider/Carousel</a></p>
+            </div>
+          </div>
+          <div class="col-md-6">
             <div class="box">
               <h2>JS</h2>
               <p>config-swiper.js</p>
