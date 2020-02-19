@@ -416,7 +416,7 @@ label.label-form-login {
  }
 
 #checkbox[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+#checkbox[type="checkbox"]:checked {
   position: absolute;
   display: none;
 }
