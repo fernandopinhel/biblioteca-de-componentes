@@ -1,4 +1,4 @@
-//Saber mais, documentcao
+//Saber mais, documentacao
 // https://swiperjs.com/get-started/
 // https://github.com/nolimits4web/swiper
 
