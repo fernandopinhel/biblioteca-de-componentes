@@ -11,6 +11,8 @@
     <!-- estilo css -->
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/estilo.css">
+    <!-- slider / carousel -->
+    <link rel="stylesheet" href="css/swiper.min.css">
     <title>Biblioteca de componentes</title>
   </head>
   <body>
@@ -24,7 +26,7 @@
               <option value="" selected>Selecione</option>
               <option value="input-text">Input Text</option>
               <option value="login-form">Form para login</option>
-              <option value="3-componente">Terceiro componente</option>
+              <option value="slider-carousel">Slider / Carousel</option>
             </select>
           </div>
         </div>
@@ -778,6 +780,364 @@
           </div>
         </div>
       </section>
+      <section class="div-sel" id="slider-carousel">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Slider / Carousel</h1>
+              <!-- Swiper -->
+              <div class="wrapper-swiper">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/teste-img.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/teste-img.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/teste-img.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                          <div class="col">
+                            <p>texto</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/teste-img.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                      <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                      </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- Add Pagination -->
+                  <!-- <div class="swiper-pagination"></div> -->
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>JS</h2>
+              <p>Usando: &lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/swiper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  //Saber mais, documentcao
+                  // https://swiperjs.com/get-started/
+                  // https://github.com/nolimits4web/swiper
+
+                  var swiper = new Swiper(&#039;.swiper-container&#039;, {
+                       slidesPerView: 1,
+                       spaceBetween: 10,
+                       // init: false,
+                       pagination: {
+                         el: &#039;.swiper-pagination&#039;,
+                         clickable: true,
+                       },
+                       navigation: {
+                         nextEl: &#039;.swiper-button-next&#039;,
+                         prevEl: &#039;.swiper-button-prev&#039;,
+                       },
+                       breakpoints: {
+                         640: {
+                           slidesPerView: 1,
+                           spaceBetween: 20,
+                         },
+                         768: {
+                           slidesPerView: 2,
+                           spaceBetween: 40,
+                         },
+                         1024: {
+                           slidesPerView: 3,
+                           spaceBetween: 50,
+                         },
+                       }
+                     });
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <p>Usando Bootstrap v4.2.1: &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;!-- Swiper --&gt;
+                  &lt;div class=&quot;wrapper-swiper&quot;&gt;
+                    &lt;div class=&quot;swiper-container&quot;&gt;
+                      &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;img src=&quot;img/teste-img.jpg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;div class=&quot;container&quot;&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;img src=&quot;img/teste-img.jpg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;div class=&quot;container&quot;&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;img src=&quot;img/teste-img.jpg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;div class=&quot;container&quot;&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;col&quot;&gt;
+                                &lt;p&gt;texto&lt;/p&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;img src=&quot;img/teste-img.jpg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;swiper-slide&quot;&gt;
+                          &lt;form&gt;
+                          &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
+                            &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; aria-describedby=&quot;emailHelp&quot; placeholder=&quot;Enter email&quot;&gt;
+                            &lt;small id=&quot;emailHelp&quot; class=&quot;form-text text-muted&quot;&gt;We&#039;ll never share your email with anyone else.&lt;/small&gt;
+                          &lt;/div&gt;
+                          &lt;div class=&quot;form-group&quot;&gt;
+                            &lt;label for=&quot;exampleInputPassword1&quot;&gt;Password&lt;/label&gt;
+                            &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot; placeholder=&quot;Password&quot;&gt;
+                          &lt;/div&gt;
+                          &lt;div class=&quot;form-check&quot;&gt;
+                            &lt;input type=&quot;checkbox&quot; class=&quot;form-check-input&quot; id=&quot;exampleCheck1&quot;&gt;
+                            &lt;label class=&quot;form-check-label&quot; for=&quot;exampleCheck1&quot;&gt;Check me out&lt;/label&gt;
+                          &lt;/div&gt;
+                            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+                          &lt;/form&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;!-- Add Pagination --&gt;
+                      &lt;!-- &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt; --&gt;
+                      &lt;!-- Add Arrows --&gt;
+                      &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
+                      &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <pre>
+                <code class="language-css" data-lang="css">
+                  // slider / carousel
+
+                  .swiper-container {
+                    width: 100%;
+                    /* height: 100%; */
+                  }
+
+                   .swiper-slide {
+                     text-align: center;
+                     font-size: 18px;
+                     background: #fff;
+
+                     /* Center slide text vertically */
+                     display: -webkit-box;
+                     display: -ms-flexbox;
+                     display: -webkit-flex;
+                     display: flex;
+                     -webkit-box-pack: center;
+                     -ms-flex-pack: center;
+                     -webkit-justify-content: center;
+                     justify-content: center;
+                     -webkit-box-align: center;
+                     -ms-flex-align: center;
+                     -webkit-align-items: center;
+                     align-items: center;
+                   }
+
+                   swiper-button-next:focus, swiper-button-prev:focus{
+                     background: transparent;
+                   }
+
+                  // fim slider / carousel
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
 
@@ -786,5 +1146,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/combo.js"></script>
     <script src="js/login-form.js"></script>
+    <!-- swipper -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/config-swiper.js"></script>
   </body>
 </html>
