@@ -29,7 +29,8 @@
               <option value="input-text">Input Text</option>
               <option value="login-form">Form para login</option>
               <option value="slider-carousel">Slider / Carousel</option>
-              <option value="accordion-cards-multilistas-abertas">Accordion card multilistas abertas</option>
+              <option value="accordion-cards">Accordion cards</option>
+              <option value="accordion-cards-multilistas-abertas">Accordion cards multilistas abertas</option>
             </select>
           </div>
         </div>
@@ -1186,11 +1187,232 @@
           </div>
         </div>
       </section>
+      <section class="div-sel" id="accordion-cards">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Accordion cards</h1>
+              <div class="accordion" id="accordion">
+                <div class="card">
+                  <div class="card-header" id="heading-6">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link d-flex align-items-center" data-toggle="collapse" data-target="#collapse-6" aria-expanded="true" aria-controls="collapse-6">
+                        Card 1
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-6" class="collapse show" aria-labelledby="heading-6" data-parent="#accordion">
+                    <div class="card-body">
+                      Conteúdo collapse 1
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-7">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link d-flex align-items-center collapsed" data-toggle="collapse" data-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+                        Card 2
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-7" class="collapse" aria-labelledby="heading-7" data-parent="#accordion">
+                    <div class="card-body">
+                      Conteúdo collapse 2
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-8">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link d-flex align-items-center collapsed" data-toggle="collapse" data-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+                        Card 3
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-8" class="collapse" aria-labelledby="heading-8" data-parent="#accordion">
+                    <div class="card-body">
+                      Conteúdo collapse 3
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-9">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link d-flex align-items-center collapsed" data-toggle="collapse" data-target="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+                        Card 4
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-9" class="collapse" aria-labelledby="heading-9" data-parent="#accordion">
+                    <div class="card-body">
+                      Conteúdo collapse 4
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-10">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link d-flex align-items-center collapsed" data-toggle="collapse" data-target="#collapse-10" aria-expanded="false" aria-controls="collapse-10">
+                        Card 5
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-10" class="collapse" aria-labelledby="heading-10" data-parent="#accordion">
+                    <div class="card-body">
+                      Conteúdo collapse 5
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Observações para usar o componente</h5>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bradseg_icons.css&quot;&gt;</p>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Baixar arquivos:</h5>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/font-bradesco-e-css-icon.zip" target="_blank">Font + CSS icones Bradesco</a></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;div class=&quot;accordion&quot; id=&quot;accordion&quot;&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; id=&quot;heading-6&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link d-flex align-items-center&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-6&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;collapse-6&quot;&gt;
+                            Card 1
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-6&quot; class=&quot;collapse show&quot; aria-labelledby=&quot;heading-6&quot; data-parent=&quot;#accordion&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Conte&uacute;do collapse 1
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; id=&quot;heading-7&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link d-flex align-items-center collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-7&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-7&quot;&gt;
+                            Card 2
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-7&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-7&quot; data-parent=&quot;#accordion&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Conte&uacute;do collapse 2
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; id=&quot;heading-8&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link d-flex align-items-center collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-8&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-8&quot;&gt;
+                            Card 3
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-8&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-8&quot; data-parent=&quot;#accordion&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Conte&uacute;do collapse 3
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; id=&quot;heading-9&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link d-flex align-items-center collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-9&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-9&quot;&gt;
+                            Card 4
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-9&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-9&quot; data-parent=&quot;#accordion&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Conte&uacute;do collapse 4
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; id=&quot;heading-10&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link d-flex align-items-center collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-10&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-10&quot;&gt;
+                            Card 5
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-10&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-10&quot; data-parent=&quot;#accordion&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Conte&uacute;do collapse 5
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <p>estilo.css</p>
+              <pre>
+                <code class="language-css" data-lang="css">
+                  // accordion + icones bradesco
+
+                  #accordion .card .card-header h5 button{
+                    width: 100%;
+                    text-align: left;
+                    text-decoration: none;
+                  }
+
+                  .b-icon &gt; button {
+                    display: block;
+                    position: relative;
+                  }
+
+                  .b-icon &gt; button:after {
+                    content: &quot;\e958&quot;;
+                    font-family: &#039;bradesco_v2&#039;;
+                    position: absolute;
+                    right: 0;
+                    font-size: 23px;
+                  }
+
+                  .b-icon &gt; button[aria-expanded=&quot;true&quot;]:after {
+                    content: &quot;\e96d&quot;;
+                    font-size: 23px;
+                  }
+
+                  // fim accordion + icones bradesco
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="div-sel" id="accordion-cards-multilistas-abertas">
         <div class="row">
           <div class="col-12">
             <div class="example">
-              <h1>Accordion card multilistas abertas</h1>
+              <h1>Accordion cards multilistas abertas</h1>
               <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="card">
                   <div class="card-header" role="tab" id="heading-1">
@@ -1202,7 +1424,7 @@
                   </div>
                   <div id="collapse-1" class="collapse show" role="tabpanel" aria-labelledby="heading-1">
                     <div class="card-body">
-                      Card 1
+                      Conteúdo collapse 1
                     </div>
                   </div>
                 </div>
@@ -1269,9 +1491,9 @@
             <div class="box">
               <h5>Observações para usar o componente</h5>
               <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
               <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bradseg_icons.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
               <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
               <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
               <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
