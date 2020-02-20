@@ -11,6 +11,8 @@
     <!-- estilo css -->
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/estilo.css">
+    <!-- Bradesco -->
+    <link rel="stylesheet" href="css/bradseg_icons.css">
     <!-- slider / carousel -->
     <link rel="stylesheet" href="css/swiper.min.css">
     <title>Biblioteca de componentes</title>
@@ -27,6 +29,7 @@
               <option value="input-text">Input Text</option>
               <option value="login-form">Form para login</option>
               <option value="slider-carousel">Slider / Carousel</option>
+              <option value="accordion-cards-multilistas-abertas">Accordion card multilistas abertas</option>
             </select>
           </div>
         </div>
@@ -1177,6 +1180,226 @@
                    }
 
                   // fim slider / carousel
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="div-sel" id="accordion-cards-multilistas-abertas">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Accordion card multilistas abertas</h1>
+              <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                  <div class="card-header" role="tab" id="heading-1">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link d-flex align-items-center" type="button" data-parent="#accordion" data-toggle="collapse" data-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                        Card 1
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-1" class="collapse show" role="tabpanel" aria-labelledby="heading-1">
+                    <div class="card-body">
+                      Card 1
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="heading-2">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link collapsed d-flex align-items-center" type="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                        Card 2
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-2" class="collapse" aria-labelledby="heading-2">
+                    <div class="card-body">
+                      Conteúdo collapse 2
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="heading-3">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link collapsed d-flex align-items-center" type="button" data-parent="#accordion" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                        Card 3
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-3" class="collapse" aria-labelledby="heading-3">
+                    <div class="card-body">
+                     Conteúdo collapse 3
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="heading-4">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link collapsed d-flex align-items-center" type="button" data-parent="#accordion" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                        Card 4
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-4" class="collapse" aria-labelledby="heading-4">
+                    <div class="card-body">
+                     Conteúdo collapse 4
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="heading-5">
+                    <h5 class="mb-0 b-icon">
+                      <button class="btn btn-link collapsed d-flex align-items-center" type="button" data-parent="#accordion" data-toggle="collapse" data-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                        Card 5
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-5" class="collapse" aria-labelledby="heading-5">
+                    <div class="card-body">
+                     Conteúdo collapse 5
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Observações para usar o componente</h5>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bradseg_icons.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Baixar arquivos:</h5>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;div class=&quot;accordion&quot; id=&quot;accordion&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; role=&quot;tab&quot; id=&quot;heading-1&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link d-flex align-items-center&quot; type=&quot;button&quot; data-parent=&quot;#accordion&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-1&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;collapse-1&quot;&gt;
+                            Card 1
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-1&quot; class=&quot;collapse show&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;heading-1&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Card 1
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; role=&quot;tab&quot; id=&quot;heading-2&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link collapsed d-flex align-items-center&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; data-target=&quot;#collapse-2&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-2&quot;&gt;
+                            Card 2
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-2&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-2&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                          Conte&uacute;do collapse 2
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; role=&quot;tab&quot; id=&quot;heading-3&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link collapsed d-flex align-items-center&quot; type=&quot;button&quot; data-parent=&quot;#accordion&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-3&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-3&quot;&gt;
+                            Card 3
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-3&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-3&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                         Conte&uacute;do collapse 3
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; role=&quot;tab&quot; id=&quot;heading-4&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link collapsed d-flex align-items-center&quot; type=&quot;button&quot; data-parent=&quot;#accordion&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-4&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-4&quot;&gt;
+                            Card 4
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-4&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-4&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                         Conte&uacute;do collapse 4
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card&quot;&gt;
+                      &lt;div class=&quot;card-header&quot; role=&quot;tab&quot; id=&quot;heading-5&quot;&gt;
+                        &lt;h5 class=&quot;mb-0 b-icon&quot;&gt;
+                          &lt;button class=&quot;btn btn-link collapsed d-flex align-items-center&quot; type=&quot;button&quot; data-parent=&quot;#accordion&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapse-5&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-5&quot;&gt;
+                            Card 5
+                          &lt;/button&gt;
+                        &lt;/h5&gt;
+                      &lt;/div&gt;
+                      &lt;div id=&quot;collapse-5&quot; class=&quot;collapse&quot; aria-labelledby=&quot;heading-5&quot;&gt;
+                        &lt;div class=&quot;card-body&quot;&gt;
+                         Conte&uacute;do collapse 5
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <p>estilo.css</p>
+              <pre>
+                <code class="language-css" data-lang="css">
+                  // accordion + icones bradesco
+
+                  #accordion .card .card-header h5 button{
+                    width: 100%;
+                    text-align: left;
+                    text-decoration: none;
+                  }
+
+                  .b-icon &gt; button {
+                    display: block;
+                    position: relative;
+                  }
+
+                  .b-icon &gt; button:after {
+                    content: &quot;\e958&quot;;
+                    font-family: &#039;bradesco_v2&#039;;
+                    position: absolute;
+                    right: 0;
+                    font-size: 23px;
+                  }
+
+                  .b-icon &gt; button[aria-expanded=&quot;true&quot;]:after {
+                    content: &quot;\e96d&quot;;
+                    font-size: 23px;
+                  }
+
+                  // fim accordion + icones bradesco
                 </code>
               </pre>
             </div>
