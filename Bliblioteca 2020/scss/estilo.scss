@@ -628,30 +628,44 @@ a.btn-signup:hover, a.btn-signin:hover {
 
 // fim slider / carousel
 
-// accordion + icones bradesco
+// accordion icones 
 
 #accordion .card .card-header h5 button{
   width: 100%;
   text-align: left;
   text-decoration: none;
+  padding: 15px;
 }
+
+.card-header{padding: 0;}
 
 .b-icon > button {
   display: block;
   position: relative;
 }
 
-.b-icon > button:after {
-  content: "\e958";
-  font-family: 'bradesco_v2';
+.seta-accordion{
   position: absolute;
-  right: 0;
-  font-size: 23px;
+  right: 15px;
+  background:url(../img/seta-accordion.svg);
+  transform: rotate(180deg); /* Equal to rotateZ(45deg) */
+  width: 30px;
+  height: 21px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.6s all;
 }
 
-.b-icon > button[aria-expanded="true"]:after {
-  content: "\e96d";
-  font-size: 23px;
+.b-icon > button[aria-expanded="true"] .seta-accordion{
+  position: absolute;
+  right: 15px;
+  background:url(../img/seta-accordion.svg);
+  width: 30px;
+  height: 21px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(0deg);
+  transition: 0.6s all;
 }
 
-// fim accordion + icones bradesco
+// fim accordion icones
