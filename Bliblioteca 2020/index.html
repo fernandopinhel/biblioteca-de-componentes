@@ -28,7 +28,8 @@
               <option value="" selected>Selecione</option>
               <option value="input-text">Input Text</option>
               <option value="login-form">Form para login</option>
-              <option value="slider-carousel">Slider / Carousel</option>
+              <option value="slider-carousel">Slider/Carousel não funciona no IE</option>
+              <option value="slider-carousel-funciona-ie">Slider/Carousel funciona no IE</option>
               <option value="accordion-cards">Accordion cards</option>
               <option value="accordion-cards-multilistas-abertas">Accordion cards multilistas abertas</option>
             </select>
@@ -810,7 +811,7 @@
         <div class="row">
           <div class="col-12">
             <div class="example">
-              <h1>Slider / Carousel</h1>
+              <h1>Slider/Carousel não funciona no IE</h1>
               <!-- Swiper -->
               <div class="wrapper-swiper">
                 <div class="swiper-container">
@@ -1181,6 +1182,316 @@
                    }
 
                   // fim slider / carousel
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="div-sel" id="slider-carousel-funciona-ie">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Slider/Carousel funciona no IE</h1>
+                <div class="top-content">
+                  <div class="container-fluid">
+                    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                              <p>Coluna 1</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 2</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 3</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 4</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 5</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 6</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 7</p>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                              <p>Coluna 8</p>
+                          </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Observações para usar o componente</h5>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/config-carousel.js&quot;&gt;&lt;/script&gt;</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="box">
+              <h5>Baixar arquivos:</h5>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
+              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>JS</h2>
+              <p>config-carousel.js</p>
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  $(&#039;#carousel-example&#039;).on(&#039;slide.bs.carousel&#039;, function (e) {
+                    var $e = $(e.relatedTarget);
+                    var idx = $e.index();
+                    var itemsPerSlide = 4;
+                    var totalItems = $(&#039;.carousel-item&#039;).length;
+
+                    if (idx &gt;= totalItems-(itemsPerSlide-1)) {
+                        var it = itemsPerSlide - (totalItems - idx);
+                        for (var i=0; i&lt;it; i++) {
+                            // append slides to end
+                            if (e.direction==&quot;left&quot;) {
+                                $(&#039;.carousel-item&#039;).eq(i).appendTo(&#039;.carousel-inner&#039;);
+                            }
+                            else {
+                                $(&#039;.carousel-item&#039;).eq(0).appendTo(&#039;.carousel-inner&#039;);
+                            }
+                        }
+                    }
+                  });
+                $(&#039;.carousel&#039;).carousel({interval: 0})
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;div class=&quot;top-content&quot;&gt;
+                    &lt;div class=&quot;container-fluid&quot;&gt;
+                      &lt;div id=&quot;carousel-example&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot;&gt;
+                        &lt;div class=&quot;carousel-inner row w-100 mx-auto&quot; role=&quot;listbox&quot;&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active&quot;&gt;
+                                &lt;p&gt;Coluna 1&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 2&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 3&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 4&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 5&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 6&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 7&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;carousel-item col-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;
+                                &lt;p&gt;Coluna 8&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;a class=&quot;carousel-control-prev&quot; href=&quot;#carousel-example&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;
+                          &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/a&gt;
+                        &lt;a class=&quot;carousel-control-next&quot; href=&quot;#carousel-example&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;
+                          &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <p>estilo.css</p>
+              <pre>
+                <code class="language-css" data-lang="css">
+                  // slider / carousel funciona no IE
+
+                  .carousel-item{
+                    padding: 15px 40px 0 40px;
+                    text-align: center;
+                  }
+
+                  .carousel-control-next, .carousel-control-prev {width: 0;}
+
+                  .carousel-control-prev-icon{
+                    position: absolute;
+                    left: 0;
+                    background:url(../img/prev-carousel.svg);
+                    width: 30px;
+                    height: 21px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transition: 0.6s all;
+                  }
+
+                  .carousel-control-next-icon{
+                    position: absolute;
+                    right: 0;
+                    background:url(../img/next-carousel.svg);
+                    width: 30px;
+                    height: 21px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transition: 0.6s all;
+                  }
+
+                  @media (min-width: 768px) and (max-width: 991px) {
+                    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                      position: absolute;
+                      top: 0;
+                      right: -33.3333%;
+                      z-index: -1;
+                      display: block;
+                      visibility: visible;
+                    }
+                  }
+
+                  @media (min-width: 576px) and (max-width: 768px) {
+                    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+                      position: absolute;
+                      top: 0;
+                      right: -50%;
+                      z-index: -1;
+                      display: block;
+                      visibility: visible;
+                    }
+                  }
+
+                  @media (min-width: 576px) {
+                    .carousel-item {margin-right: 0;}
+
+                    .carousel-inner .active + .carousel-item {display: block;}
+                    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+                    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+                      transition: none;
+                    }
+
+                    .carousel-inner .carousel-item-next {
+                      position: relative;
+                      transform: translate3d(0, 0, 0);
+                    }
+
+                    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+                    .carousel-item-next.carousel-item-left + .carousel-item,
+                    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+                      position: relative;
+                      transform: translate3d(-100%, 0, 0);
+                      visibility: visible;
+                    }
+
+                    .carousel-inner .carousel-item-prev.carousel-item-right {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      z-index: -1;
+                      display: block;
+                      visibility: visible;
+                    }
+
+                    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+                    .carousel-item-prev.carousel-item-right + .carousel-item,
+                    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+                      position: relative;
+                      transform: translate3d(100%, 0, 0);
+                      visibility: visible;
+                      display: block;
+                      visibility: visible;
+                      }
+                  }
+
+                  @media (min-width: 768px) {
+                    .carousel-inner .active + .carousel-item + .carousel-item {display: block;}
+                    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+                      transition: none;
+                    }
+
+                    .carousel-inner .carousel-item-next {
+                      position: relative;
+                      transform: translate3d(0, 0, 0);
+                    }
+
+                    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+                      position: relative;
+                      transform: translate3d(-100%, 0, 0);
+                      visibility: visible;
+                    }
+
+                    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+                      position: relative;
+                      transform: translate3d(100%, 0, 0);
+                      visibility: visible;
+                      display: block;
+                      visibility: visible;
+                    }
+                  }
+
+                  @media (min-width: 991px) {
+                    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+                      display: block;
+                    }
+
+                    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+                      transition: none;
+                    }
+
+                    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                      position: absolute;
+                      top: 0;
+                      right: -25%;
+                      z-index: -1;
+                      display: block;
+                      visibility: visible;
+                    }
+
+                    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                      position: relative;
+                      transform: translate3d(-100%, 0, 0);
+                      visibility: visible;
+                    }
+
+                  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                      position: relative;
+                      transform: translate3d(100%, 0, 0);
+                      visibility: visible;
+                      display: block;
+                      visibility: visible;
+                    }
+                  }
+
+                  // fim slider / carousel funciona no IE
                 </code>
               </pre>
             </div>
@@ -1681,8 +1992,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/combo.js"></script>
     <script src="js/login-form.js"></script>
-    <!-- swipper -->
+    <!-- swipper carousel nao funciona IE-->
     <script src="js/swiper.min.js"></script>
     <script src="js/config-swiper.js"></script>
+    <!-- Carousel funciona IE -->
+    <script src="js/carousel-funciona-ie.js"></script>
   </body>
 </html>
