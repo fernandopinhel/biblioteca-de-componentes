@@ -4,17 +4,40 @@
     <!-- meta tags obrigatorias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- fim meta tags obrigatorias -->
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- fim bootstrap css -->
+
     <!-- fonte -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <!-- fim fonte -->
+
     <!-- estilo css -->
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/estilo.css">
-    <!-- Bradesco -->
+    <!-- fim estilo css -->
+
+    <!-- bradesco -->
     <link rel="stylesheet" href="css/bradseg_icons.css">
+    <!-- fim bradesco -->
+
     <!-- slider / carousel -->
     <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- fim slider / carousel -->
+
+    <!-- slider Owl -->
+    <!-- Documentacao >> https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- fim slider Owl -->
+
     <title>Biblioteca de componentes</title>
   </head>
   <body>
@@ -30,6 +53,7 @@
               <option value="login-form">Form para login</option>
               <!-- <option value="slider-carousel">Slider/Carousel não funciona no IE</option> -->
               <option value="slider-carousel-funciona-ie">Slider/Carousel</option>
+              <option value="slider-carousel-por-blocos">Slider/Carousel por blocos</option>
               <option value="accordion-cards">Accordion abrindo um</option>
               <option value="accordion-cards-multilistas-abertas" selected>Accordion multilistas abertas</option>
             </select>
@@ -1476,6 +1500,153 @@
           </div>
         </div>
       </section>
+      <section class="div-sel" id="slider-carousel-por-blocos">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Slider/Carousel por blocos</h1>
+              <div class="container-fluid">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><h4>1</h4></div>
+                    <div class="item"><h4>2</h4></div>
+                    <div class="item"><h4>3</h4></div>
+                    <div class="item"><h4>4</h4></div>
+                    <div class="item"><h4>5</h4></div>
+                    <div class="item"><h4>6</h4></div>
+                    <div class="item"><h4>7</h4></div>
+                    <div class="item"><h4>8</h4></div>
+                    <div class="item"><h4>9</h4></div>
+                    <div class="item"><h4>10</h4></div>
+                    <div class="item"><h4>11</h4></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;div class=&quot;container-fluid&quot;&gt;
+                    &lt;div class=&quot;owl-carousel owl-theme&quot;&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+              <h2>CSS</h2>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <p>&lt;!-- slider Owl --&gt;</p>
+              <p>&lt;!-- Documentacao &gt;&gt; https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html --&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/owl.carousel.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/owl.theme.default.min.css&quot;&gt;</p>
+              <p>&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</p>
+              <p>&lt;!--[if lt IE 9]&gt;</p>
+                <p>&lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</p>
+                <p>&lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;![endif]--&gt;</p>
+              <p>&lt;!-- fim slider Owl --&gt;</p>
+              <pre>
+                <code class="language-css" data-lang="css">
+                  // OWL slider por blocos
+                  .owl-carousel .owl-nav button.owl-prev{
+                    position: absolute;
+                    left: 0;
+                    top: -20px;
+                  }
+
+                  .owl-carousel .owl-nav button.owl-next{
+                    position: absolute;
+                    right: 0;
+                    top: -20px;
+                  }
+
+                  .owl-stage{
+                    padding-top: 13px;
+                  }
+
+                  .owl-carousel .item h4{
+                    text-align: center;
+                  }
+
+                  .owl-theme .owl-nav [class*=owl-]{
+                    font-size: 50px !important;
+                  }
+
+                  .owl-theme .owl-nav [class*=owl-]:hover{
+                    background: transparent !important;
+                    color: #212529 !important;
+                  }
+
+                  // fim OWL slider por blocos
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;!-- Inicio Owl --&gt;</p>
+              <p>&lt;script src=&quot;js/owl.carousel.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/script.js&quot;&gt;&lt;/script&gt;</p>
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  // Options do plugins https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
+                  $(&#039;.owl-carousel&#039;).owlCarousel({
+                  loop:true,
+                  nav:true,
+                  dots: false,
+                  margin:10,
+                  slideBy: 4,
+                  responsiveClass:true,
+                  responsive:{
+                      0:{
+                        items:1,
+                        nav:true
+                      },
+                      992:{
+                        items:2,
+                        nav:true
+                      },
+                      1000:{
+                        items:3,
+                        nav:true,
+                        loop:false
+                      },
+                      1200:{
+                        items:4,
+                        nav:true,
+                        loop:false
+                      }
+                    }
+                  })
+                </code>
+              </pre>
+              <p>&lt;!-- fim Owl --&gt;</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="div-sel" id="accordion-cards">
         <div class="row">
           <div class="col-12">
@@ -1947,16 +2118,32 @@
       </section>
     </div>
 
-
+    <!-- scripts necessarios -->
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <!-- fim scripts necessarios -->
+
+    <!-- combo js da pagina pra carregar componetes -->
     <script src="js/combo.js"></script>
+    <!-- fim combo js da pagina pra carregar componetes -->
+
+    <!-- componente form pra tela de login -->
     <script src="js/login-form.js"></script>
-    <!-- swipper carousel nao funciona IE-->
+    <!-- fim componente form pra tela de login -->
+
+    <!-- swipper carousel nao funciona IE -->
     <script src="js/swiper.min.js"></script>
     <script src="js/config-swiper.js"></script>
-    <!-- Carousel funciona IE -->
+    <!-- fim swipper carousel nao funciona IE -->
+
+    <!-- carousel funciona IE -->
     <script src="js/carousel-funciona-ie.js"></script>
+    <!-- fim carousel funciona IE -->
+
+    <!-- slider Owl -->
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/config-owl-carousel.js"></script>
+    <!-- fim slider Owl -->
   </body>
 </html>
