@@ -27,14 +27,16 @@ h1{
   padding: 10px;
 }
 
-.box > h6{
-  color: #e83e8c;
-  padding: 5px 0;
+h6{
+  color: blue;
 }
 
-.box > p{
-  background: #FBFBFB;
+
+.box > .row a{
+  color: #e83e8c;
   padding: 10px;
+  display: block;
+  background: #FBFBFB;
 }
 
 .example{
@@ -54,6 +56,7 @@ h1{
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 20px;
+  height: 100%;
 }
 
 // fim geral
