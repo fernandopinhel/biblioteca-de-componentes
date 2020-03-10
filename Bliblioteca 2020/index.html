@@ -4,17 +4,40 @@
     <!-- meta tags obrigatorias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- fim meta tags obrigatorias -->
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- fim bootstrap css -->
+
     <!-- fonte -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <!-- fim fonte -->
+
     <!-- estilo css -->
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/estilo.css">
-    <!-- Bradesco -->
+    <!-- fim estilo css -->
+
+    <!-- bradesco -->
     <link rel="stylesheet" href="css/bradseg_icons.css">
+    <!-- fim bradesco -->
+
     <!-- slider / carousel -->
     <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- fim slider / carousel -->
+
+    <!-- slider Owl -->
+    <!-- Documentacao >> https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- fim slider Owl -->
+
     <title>Biblioteca de componentes</title>
   </head>
   <body>
@@ -25,13 +48,14 @@
           <div class="form-group">
             <label for="componentes">Componentes</label>
             <select class="form-control" name="componentes" id="componentes">
-              <option value="" selected>Selecione</option>
+              <option value="">Selecione</option>
               <option value="input-text">Input Text</option>
               <option value="login-form">Form para login</option>
-              <option value="slider-carousel">Slider/Carousel não funciona no IE</option>
-              <option value="slider-carousel-funciona-ie">Slider/Carousel funciona no IE</option>
-              <option value="accordion-cards">Accordion cards</option>
-              <option value="accordion-cards-multilistas-abertas">Accordion cards multilistas abertas</option>
+              <!-- <option value="slider-carousel">Slider/Carousel não funciona no IE</option> -->
+              <option value="slider-carousel-funciona-ie">Slider/Carousel</option>
+              <option value="slider-carousel-por-blocos">Slider/Carousel por blocos</option>
+              <option value="accordion-cards">Accordion abrindo um</option>
+              <option value="accordion-cards-multilistas-abertas" selected>Accordion multilistas abertas</option>
             </select>
           </div>
         </div>
@@ -69,6 +93,8 @@
               <h2>CSS</h2>
               <pre>
                 <code class="language-html" data-lang="html">
+                  // input text animado
+
                   .form {
                     position: relative;
                     height: 80px;
@@ -172,6 +198,7 @@
                   .form input:focus+.label-name .content-name{
                     color: $cinza-medio;
                   }
+                  // fim input text animado
                 </code>
               </pre>
             </div>
@@ -242,65 +269,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/login-form.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/form-tela-login.zip" target="_blank">Slider/Carousel</a></p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="box">
-              <h2>JS</h2>
-              <p>login-form.js</p>
-              <pre>
-                <code class="language-JavaScript" data-lang="JavaScript">
-                  $(function() {
-                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
-                      $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
-                      $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
-                      $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
-                      $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
-                      $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
-                      $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
-                      $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
-                    });
-                  });
-
-                  // desativando a tecla tab do campo password pois enfrentava problema
-                  $(function(){
-                    $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
-                      // use which ou charCode ou e.keyCode, dependendo do navegador
-                      var key = e.which || e.charCode || e.keyCode;
-                      // 9 &eacute; o caracter Unicode da tecla TAB
-                      if (key === 9) {
-                      if (e.preventDefault) {
-                      		e.preventDefault();
-                      }
-                      return false;
-                      }
-                    });
-                  });
-                </code>
-              </pre>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-sm-5">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -366,10 +335,13 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+
               <pre>
                 <code class="language-css" data-lang="css">
                   // form para tela de login
@@ -805,14 +777,57 @@
               </pre>
             </div>
           </div>
+          <div class="col-sm-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/script.js&quot;&gt;&lt;/script&gt;</p>
+
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  // form para tela de login
+                  $(function() {
+                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
+                      $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
+                      $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
+                      $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
+                      $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
+                      $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
+                      $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
+                      $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
+                    });
+                  });
+
+                  // desativando a tecla tab do campo password pois enfrentava problema
+                  $(function(){
+                    $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
+                      // use which ou charCode ou e.keyCode, dependendo do navegador
+                      var key = e.which || e.charCode || e.keyCode;
+                      // 9 &eacute; o caracter Unicode da tecla TAB
+                      if (key === 9) {
+                      if (e.preventDefault) {
+                      		e.preventDefault();
+                      }
+                      return false;
+                      }
+                    });
+                  });
+                  // fim form para tela de login
+                </code>
+              </pre>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="div-sel" id="slider-carousel">
+      <!-- <section class="div-sel" id="slider-carousel">
         <div class="row">
           <div class="col-12">
             <div class="example">
               <h1>Slider/Carousel não funciona no IE</h1>
-              <!-- Swiper -->
+
               <div class="wrapper-swiper">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -933,9 +948,9 @@
                       </form>
                     </div>
                   </div>
-                  <!-- Add Pagination -->
-                  <!-- <div class="swiper-pagination"></div> -->
-                  <!-- Add Arrows -->
+
+
+
                   <div class="swiper-button-next"></div>
                   <div class="swiper-button-prev"></div>
                 </div>
@@ -1187,7 +1202,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="div-sel" id="slider-carousel-funciona-ie">
         <div class="row">
           <div class="col-12">
@@ -1233,60 +1248,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/config-carousel.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-              <h6>Baixar os SVG´s das setas e colocar na pasta img</h6>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/setas-carousel.zip" target="_blank">Setas</a></p>              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="box">
-              <h2>JS</h2>
-              <p>config-carousel.js</p>
-              <pre>
-                <code class="language-JavaScript" data-lang="JavaScript">
-                  $(&#039;#carousel-example&#039;).on(&#039;slide.bs.carousel&#039;, function (e) {
-                    var $e = $(e.relatedTarget);
-                    var idx = $e.index();
-                    var itemsPerSlide = 4;
-                    var totalItems = $(&#039;.carousel-item&#039;).length;
-
-                    if (idx &gt;= totalItems-(itemsPerSlide-1)) {
-                        var it = itemsPerSlide - (totalItems - idx);
-                        for (var i=0; i&lt;it; i++) {
-                            // append slides to end
-                            if (e.direction==&quot;left&quot;) {
-                                $(&#039;.carousel-item&#039;).eq(i).appendTo(&#039;.carousel-inner&#039;);
-                            }
-                            else {
-                                $(&#039;.carousel-item&#039;).eq(0).appendTo(&#039;.carousel-inner&#039;);
-                            }
-                        }
-                    }
-                  });
-                $(&#039;.carousel&#039;).carousel({interval: 0})
-                </code>
-              </pre>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-sm-5">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -1333,13 +1295,15 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <pre>
                 <code class="language-css" data-lang="css">
-                  // slider / carousel funciona no IE
+                  // carrossel
 
                   .carousel-item{
                     padding: 15px 40px 0 40px;
@@ -1493,9 +1457,192 @@
                     }
                   }
 
-                  // fim slider / carousel funciona no IE
+                  // fim carrossel
                 </code>
               </pre>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/script.js&quot;&gt;&lt;/script&gt;</p>
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  // carrossel
+                  $(&#039;#carousel-example&#039;).on(&#039;slide.bs.carousel&#039;, function (e) {
+                    var $e = $(e.relatedTarget);
+                    var idx = $e.index();
+                    var itemsPerSlide = 4;
+                    var totalItems = $(&#039;.carousel-item&#039;).length;
+
+                    if (idx &gt;= totalItems-(itemsPerSlide-1)) {
+                        var it = itemsPerSlide - (totalItems - idx);
+                        for (var i=0; i&lt;it; i++) {
+                            // append slides to end
+                            if (e.direction==&quot;left&quot;) {
+                                $(&#039;.carousel-item&#039;).eq(i).appendTo(&#039;.carousel-inner&#039;);
+                            }
+                            else {
+                                $(&#039;.carousel-item&#039;).eq(0).appendTo(&#039;.carousel-inner&#039;);
+                            }
+                        }
+                    }
+                  });
+                $(&#039;.carousel&#039;).carousel({interval: 0})
+                // fim carrossel
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="div-sel" id="slider-carousel-por-blocos">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Slider/Carousel por blocos</h1>
+              <div class="container-fluid">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><h4>1</h4></div>
+                    <div class="item"><h4>2</h4></div>
+                    <div class="item"><h4>3</h4></div>
+                    <div class="item"><h4>4</h4></div>
+                    <div class="item"><h4>5</h4></div>
+                    <div class="item"><h4>6</h4></div>
+                    <div class="item"><h4>7</h4></div>
+                    <div class="item"><h4>8</h4></div>
+                    <div class="item"><h4>9</h4></div>
+                    <div class="item"><h4>10</h4></div>
+                    <div class="item"><h4>11</h4></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;div class=&quot;container-fluid&quot;&gt;
+                    &lt;div class=&quot;owl-carousel owl-theme&quot;&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+                      &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+              <h2>CSS</h2>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+              <p>&lt;!-- slider Owl --&gt;</p>
+              <p>&lt;!-- Documentacao &gt;&gt; https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html --&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/owl.carousel.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/owl.theme.default.min.css&quot;&gt;</p>
+              <p>&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</p>
+              <p>&lt;!--[if lt IE 9]&gt;</p>
+                <p>&lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</p>
+                <p>&lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;![endif]--&gt;</p>
+              <p>&lt;!-- fim slider Owl --&gt;</p>
+              <pre>
+                <code class="language-css" data-lang="css">
+                  // OWL slider por blocos
+                  .owl-carousel .owl-nav button.owl-prev{
+                    position: absolute;
+                    left: 0;
+                    top: -20px;
+                  }
+
+                  .owl-carousel .owl-nav button.owl-next{
+                    position: absolute;
+                    right: 0;
+                    top: -20px;
+                  }
+
+                  .owl-stage{
+                    padding-top: 13px;
+                  }
+
+                  .owl-carousel .item h4{
+                    text-align: center;
+                  }
+
+                  .owl-theme .owl-nav [class*=owl-]{
+                    font-size: 50px !important;
+                  }
+
+                  .owl-theme .owl-nav [class*=owl-]:hover{
+                    background: transparent !important;
+                    color: #212529 !important;
+                  }
+
+                  // fim OWL slider por blocos
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;!-- Inicio Owl --&gt;</p>
+              <p>&lt;script src=&quot;js/owl.carousel.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/script.js&quot;&gt;&lt;/script&gt;</p>
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  // Options do plugins https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
+                  $(&#039;.owl-carousel&#039;).owlCarousel({
+                  loop:true,
+                  nav:true,
+                  dots: false,
+                  margin:10,
+                  slideBy: 4,
+                  responsiveClass:true,
+                  responsive:{
+                      0:{
+                        items:1,
+                        nav:true
+                      },
+                      992:{
+                        items:2,
+                        nav:true
+                      },
+                      1000:{
+                        items:3,
+                        nav:true,
+                        loop:false
+                      },
+                      1200:{
+                        items:4,
+                        nav:true,
+                        loop:false
+                      }
+                    }
+                  })
+                </code>
+              </pre>
+              <p>&lt;!-- fim Owl --&gt;</p>
             </div>
           </div>
         </div>
@@ -1504,7 +1651,7 @@
         <div class="row">
           <div class="col-12">
             <div class="example">
-              <h1>Accordion cards</h1>
+              <h1>Accordion abrindo um</h1>
               <div class="accordion" id="accordion">
                 <div class="card">
                   <div class="card-header" id="heading-6">
@@ -1584,27 +1731,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -1690,13 +1817,15 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <pre>
                 <code class="language-css" data-lang="css">
-                  // accordion icones
+                  // accordion abrindo um
 
                   #accordion .card .card-header h5 button{
                     width: 100%;
@@ -1736,9 +1865,18 @@
                     transition: 0.6s all;
                   }
 
-                  // fim accordion icones
+                  // fim accordion abrindo um
                 </code>
               </pre>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
             </div>
           </div>
         </div>
@@ -1747,7 +1885,7 @@
         <div class="row">
           <div class="col-12">
             <div class="example">
-              <h1>Accordion cards multilistas abertas</h1>
+              <h1>Accordion multilistas abertas</h1>
               <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="card">
                   <div class="card-header" role="tab" id="heading-1">
@@ -1827,27 +1965,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-            </div>
-          </div>
-          <div class="col-md-6">
+
+          <div class="col-md-5">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -1933,13 +2052,15 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <pre>
                 <code class="language-css" data-lang="css">
-                  // accordion icones
+                  // accordion multilistas abertas
 
                   #accordion .card .card-header h5 button{
                     width: 100%;
@@ -1979,25 +2100,50 @@
                     transition: 0.6s all;
                   }
 
-                  // fim accordion icones
+                  // fim accordion multilistas abertas
                 </code>
               </pre>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-
+    <!-- scripts necessarios -->
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <!-- fim scripts necessarios -->
+
+    <!-- combo js da pagina pra carregar componetes -->
     <script src="js/combo.js"></script>
+    <!-- fim combo js da pagina pra carregar componetes -->
+
+    <!-- componente form pra tela de login -->
     <script src="js/login-form.js"></script>
-    <!-- swipper carousel nao funciona IE-->
+    <!-- fim componente form pra tela de login -->
+
+    <!-- swipper carousel nao funciona IE -->
     <script src="js/swiper.min.js"></script>
     <script src="js/config-swiper.js"></script>
-    <!-- Carousel funciona IE -->
+    <!-- fim swipper carousel nao funciona IE -->
+
+    <!-- carousel funciona IE -->
     <script src="js/carousel-funciona-ie.js"></script>
+    <!-- fim carousel funciona IE -->
+
+    <!-- slider Owl -->
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/config-owl-carousel.js"></script>
+    <!-- fim slider Owl -->
   </body>
 </html>
