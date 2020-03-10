@@ -11,6 +11,8 @@ $transicao-hover: all 0.8s;
 
 // geral
 
+
+
 body{
   font-family: 'Lato', sans-serif;
   background: $bg-favorito;
@@ -27,20 +29,22 @@ h1{
   padding: 10px;
 }
 
-.box > h6{
-  color: #e83e8c;
-  padding: 5px 0;
+h6{
+  color: blue;
 }
 
-.box > p{
-  background: #FBFBFB;
+
+.box > .row a{
+  color: #e83e8c;
   padding: 10px;
+  display: block;
+  background: #FBFBFB;
 }
 
 .example{
   background: $white;
   text-align: center;
-  padding: 20px 20px 70px 20px;
+  padding: 40px;
   margin-bottom: 30px;
   -webkit-box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.17);
   -moz-box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.17);
@@ -54,6 +58,7 @@ h1{
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 20px;
+  height: 100%;
 }
 
 // fim geral
@@ -656,6 +661,124 @@ swiper-button-next:focus, swiper-button-prev:focus{background: transparent;}
   background-position: center;
   transition: 0.6s all;
 }
+
+
+// input radio animado
+
+input[type="radio"] + label, input[type="radio"] + label:after, input[type="radio"] + label:before {
+  transition: .3s;
+}
+
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label {
+  position: relative;
+  display: inline-block;
+  line-height: 21px;
+  margin: 10px;
+  padding-left: 31px;
+}
+input[type="radio"] + label:after, input[type="radio"] + label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+  border-radius: 50%;
+  background: #fff;
+  top: 11.5px;
+  left: 11.5px;
+  transform: translate(-50%, -50%);
+}
+input[type="radio"] + label:after {
+  z-index: 1;
+  box-shadow: 0 0 0 1px #ccc inset, 0 0 0 23px #fff inset, 0 0 0 0 #3795f8 inset;
+}
+input[type="radio"] + label:before {
+  z-index: -1;
+}
+input[type="radio"]:checked + label:after {
+  box-shadow: 0 0 0 1px #3795f8 inset, 0 0 0 3px #fff inset, 0 0 0 23px #3795f8 inset;
+}
+input[type="radio"]:not(:checked):hover + label {
+  color: #3795f8;
+}
+input[type="radio"]:not(:checked):hover + label:after {
+  box-shadow: 0 0 0 2px #3795f8 inset, 0 0 0 16px #fff inset, 0 0 0 23px #3795f8 inset;
+}
+input[type="radio"]:checked + label:before {
+  background: #3795f8;
+  width: 69px;
+  height: 69px;
+  opacity: 0;
+}
+
+// fim input radio animado
+
+// input checkbox animado
+
+input[type="checkbox"] + label, input[type="checkbox"] + label:after, input[type="checkbox"] + label:before{
+  transition: .3s;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  line-height: 21px;
+  margin: 10px;
+  padding-left: 31px;
+}
+
+input[type="checkbox"] + label:after, input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 3px;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+  background: #fff;
+  top: 11.5px;
+  left: 11.5px;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"] + label:after {
+  z-index: 1;
+  box-shadow: 0 0 0 1px #ccc inset, 0 0 0 23px #fff inset, 0 0 0 0 #3795f8 inset;
+}
+input[type="checkbox"] + label:before {
+  z-index: -1;
+}
+input[type="checkbox"]:checked + label:after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 13px;
+  font-weight: 900;
+  content: "\f00c";
+  text-align: center;
+  color: #fff;
+  line-height: 23px;
+  box-shadow: 0 0 0 1px #3795f8 inset, 0 0 0 0 #fff inset, 0 0 0 23px #3795f8 inset;
+}
+input[type="checkbox"]:not(:checked):hover + label {
+  color: #3795f8;
+}
+input[type="checkbox"]:not(:checked):hover + label:after {
+  box-shadow: 0 0 0 2px #3795f8 inset, 0 0 0 16px #fff inset, 0 0 0 23px #3795f8 inset;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #3795f8;
+  width: 69px;
+  height: 69px;
+  opacity: 0;
+}
+// fim input checkbox animado
 
 @media (min-width: 768px) and (max-width: 991px) {
   .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {

@@ -11,6 +11,9 @@
     <!-- estilo css -->
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/fontawesome.min.css">
+    <link href="libs/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="libs/fontawesome/css/all.min.css" rel="stylesheet">
     <!-- Bradesco -->
     <link rel="stylesheet" href="css/bradseg_icons.css">
     <!-- slider / carousel -->
@@ -25,13 +28,15 @@
           <div class="form-group">
             <label for="componentes">Componentes</label>
             <select class="form-control" name="componentes" id="componentes">
-              <option value="" selected>Selecione</option>
+              <option value="">Selecione</option>
               <option value="input-text">Input Text</option>
+              <option value="input-radio">Input Radio</option>
+              <option value="input-checkbox" selected>Input Checkbox</option>
               <option value="login-form">Form para login</option>
-              <option value="slider-carousel">Slider/Carousel não funciona no IE</option>
-              <option value="slider-carousel-funciona-ie">Slider/Carousel funciona no IE</option>
-              <option value="accordion-cards">Accordion cards</option>
-              <option value="accordion-cards-multilistas-abertas">Accordion cards multilistas abertas</option>
+              <!-- <option value="slider-carousel">Slider/Carousel não funciona no IE</option> -->
+              <option value="slider-carousel-funciona-ie">Slider/Carousel</option>
+              <option value="accordion-cards">Accordion abrindo um</option>
+              <option value="accordion-cards-multilistas-abertas">Accordion multilistas abertas</option>
             </select>
           </div>
         </div>
@@ -69,6 +74,8 @@
               <h2>CSS</h2>
               <pre>
                 <code class="language-html" data-lang="html">
+                  // input text animado
+
                   .form {
                     position: relative;
                     height: 80px;
@@ -172,6 +179,206 @@
                   .form input:focus+.label-name .content-name{
                     color: $cinza-medio;
                   }
+                  // fim input text animado
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="div-sel" id="input-radio">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Input Radio</h1>
+              <form>
+                <input type="radio" id="radio1" name="radio" checked>
+                <label for="radio1">radio1</label>
+                <input type="radio" id="radio2" name="radio" >
+                <label for="radio2">radio2</label>
+                <input type="radio" id="radio3" name="radio" >
+                <label for="radio3">radio3</label>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;form&gt;
+                    &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radio&quot; checked&gt;
+                    &lt;label for=&quot;radio1&quot;&gt;radio1&lt;/label&gt;
+                    &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radio&quot; &gt;
+                    &lt;label for=&quot;radio2&quot;&gt;radio2&lt;/label&gt;
+                    &lt;input type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;radio&quot; &gt;
+                    &lt;label for=&quot;radio3&quot;&gt;radio3&lt;/label&gt;
+                  &lt;/form&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  // input radio animado
+
+                  input[type=&quot;radio&quot;] + label, input[type=&quot;radio&quot;] + label:after, input[type=&quot;radio&quot;] + label:before {
+                    transition: .3s;
+                  }
+
+                  input[type=&quot;radio&quot;] {
+                    display: none;
+                  }
+                  input[type=&quot;radio&quot;] + label {
+                    position: relative;
+                    display: inline-block;
+                    line-height: 21px;
+                    margin: 10px;
+                    padding-left: 31px;
+                  }
+                  input[type=&quot;radio&quot;] + label:after, input[type=&quot;radio&quot;] + label:before {
+                    content: &#039;&#039;;
+                    display: block;
+                    position: absolute;
+                    width: 23px;
+                    height: 23px;
+                    line-height: 23px;
+                    border-radius: 50%;
+                    background: #fff;
+                    top: 11.5px;
+                    left: 11.5px;
+                    transform: translate(-50%, -50%);
+                  }
+                  input[type=&quot;radio&quot;] + label:after {
+                    z-index: 1;
+                    box-shadow: 0 0 0 1px #ccc inset, 0 0 0 23px #fff inset, 0 0 0 0 #3795f8 inset;
+                  }
+                  input[type=&quot;radio&quot;] + label:before {
+                    z-index: -1;
+                  }
+                  input[type=&quot;radio&quot;]:checked + label:after {
+                    box-shadow: 0 0 0 1px #3795f8 inset, 0 0 0 3px #fff inset, 0 0 0 23px #3795f8 inset;
+                  }
+                  input[type=&quot;radio&quot;]:not(:checked):hover + label {
+                    color: #3795f8;
+                  }
+                  input[type=&quot;radio&quot;]:not(:checked):hover + label:after {
+                    box-shadow: 0 0 0 2px #3795f8 inset, 0 0 0 16px #fff inset, 0 0 0 23px #3795f8 inset;
+                  }
+                  input[type=&quot;radio&quot;]:checked + label:before {
+                    background: #3795f8;
+                    width: 69px;
+                    height: 69px;
+                    opacity: 0;
+                  }
+
+                  // fim input radio animado
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="div-sel" id="input-checkbox">
+        <div class="row">
+          <div class="col-12">
+            <div class="example">
+              <h1>Input Checkbox</h1>
+              <form>
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1">checkbox1</label>
+
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">checkbox2</label>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>HTML</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  &lt;form&gt;
+                    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot;&gt;
+                    &lt;label for=&quot;checkbox1&quot;&gt;checkbox1&lt;/label&gt;
+
+                    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot;&gt;
+                    &lt;label for=&quot;checkbox2&quot;&gt;checkbox2&lt;/label&gt;
+                  &lt;/form&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h2>CSS</h2>
+              <pre>
+                <code class="language-html" data-lang="html">
+                  // input checkbox animado
+
+                  input[type=&quot;checkbox&quot;] {
+                    display: none;
+                  }
+
+                  input[type=&quot;checkbox&quot;] + label {
+                    position: relative;
+                    display: inline-block;
+                    line-height: 21px;
+                    margin: 10px;
+                    padding-left: 31px;
+                  }
+
+                  input[type=&quot;checkbox&quot;] + label:after, input[type=&quot;checkbox&quot;] + label:before {
+                    content: &#039;&#039;;
+                    display: block;
+                    position: absolute;
+                    border-radius: 3px;
+                    width: 23px;
+                    height: 23px;
+                    line-height: 23px;
+                    background: #fff;
+                    top: 11.5px;
+                    left: 11.5px;
+                    transform: translate(-50%, -50%);
+                  }
+
+                  input[type=&quot;checkbox&quot;] + label:after {
+                    z-index: 1;
+                    box-shadow: 0 0 0 1px #ccc inset, 0 0 0 23px #fff inset, 0 0 0 0 #3795f8 inset;
+                  }
+
+                  input[type=&quot;checkbox&quot;] + label:before {
+                    z-index: -1;
+                  }
+
+                  input[type=&quot;checkbox&quot;]:checked + label:after {
+                    font: normal normal normal 13.3333333333px FontAwesome;
+                    content: &quot;\f00c&quot;;
+                    text-align: center;
+                    color: #fff;
+                    line-height: 23px;
+                    box-shadow: 0 0 0 1px #3795f8 inset, 0 0 0 0 #fff inset, 0 0 0 23px #3795f8 inset;
+                  }
+
+                  input[type=&quot;checkbox&quot;]:not(:checked):hover + label {
+                    color: #3795f8;
+                  }
+
+                  input[type=&quot;checkbox&quot;]:not(:checked):hover + label:after {
+                    box-shadow: 0 0 0 2px #3795f8 inset, 0 0 0 16px #fff inset, 0 0 0 23px #3795f8 inset;
+                  }
+
+                  input[type=&quot;checkbox&quot;]:checked + label:before {
+                    background: #3795f8;
+                    width: 69px;
+                    height: 69px;
+                    opacity: 0;
+                  }
+
+                  // fim input checkbox animado
                 </code>
               </pre>
             </div>
@@ -242,65 +449,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/login-form.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/form-tela-login.zip" target="_blank">Slider/Carousel</a></p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="box">
-              <h2>JS</h2>
-              <p>login-form.js</p>
-              <pre>
-                <code class="language-JavaScript" data-lang="JavaScript">
-                  $(function() {
-                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
-                      $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
-                      $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
-                      $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
-                      $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
-                      $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
-                      $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
-                      $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
-                    });
-                  });
-
-                  // desativando a tecla tab do campo password pois enfrentava problema
-                  $(function(){
-                    $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
-                      // use which ou charCode ou e.keyCode, dependendo do navegador
-                      var key = e.which || e.charCode || e.keyCode;
-                      // 9 &eacute; o caracter Unicode da tecla TAB
-                      if (key === 9) {
-                      if (e.preventDefault) {
-                      		e.preventDefault();
-                      }
-                      return false;
-                      }
-                    });
-                  });
-                </code>
-              </pre>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-sm-5">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -366,10 +515,13 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
+
               <pre>
                 <code class="language-css" data-lang="css">
                   // form para tela de login
@@ -805,14 +957,57 @@
               </pre>
             </div>
           </div>
+          <div class="col-sm-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/script.js&quot;&gt;&lt;/script&gt;</p>
+
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  // form para tela de login
+                  $(function() {
+                    $(&quot;.btn-entrar , .btn-cadastra-se&quot;).click(function() {
+                      $(&quot;.form-signin&quot;).toggleClass(&quot;form-signin-left&quot;);
+                      $(&quot;.form-signup&quot;).toggleClass(&quot;form-signup-left&quot;);
+                      $(&quot;.frame&quot;).toggleClass(&quot;frame-long&quot;);
+                      $(&quot;.signup-inactive&quot;).toggleClass(&quot;signup-active&quot;);
+                      $(&quot;.signin-active&quot;).toggleClass(&quot;signin-inactive&quot;);
+                      $(&quot;.forgot&quot;).toggleClass(&quot;forgot-left&quot;);
+                      $(this).removeClass(&quot;idle&quot;).addClass(&quot;active&quot;);
+                    });
+                  });
+
+                  // desativando a tecla tab do campo password pois enfrentava problema
+                  $(function(){
+                    $(&quot;.no-tab&quot;).on(&quot;keydown&quot;, function (e) {
+                      // use which ou charCode ou e.keyCode, dependendo do navegador
+                      var key = e.which || e.charCode || e.keyCode;
+                      // 9 &eacute; o caracter Unicode da tecla TAB
+                      if (key === 9) {
+                      if (e.preventDefault) {
+                      		e.preventDefault();
+                      }
+                      return false;
+                      }
+                    });
+                  });
+                  // fim form para tela de login
+                </code>
+              </pre>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="div-sel" id="slider-carousel">
+      <!-- <section class="div-sel" id="slider-carousel">
         <div class="row">
           <div class="col-12">
             <div class="example">
               <h1>Slider/Carousel não funciona no IE</h1>
-              <!-- Swiper -->
+
               <div class="wrapper-swiper">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -933,9 +1128,9 @@
                       </form>
                     </div>
                   </div>
-                  <!-- Add Pagination -->
-                  <!-- <div class="swiper-pagination"></div> -->
-                  <!-- Add Arrows -->
+
+
+
                   <div class="swiper-button-next"></div>
                   <div class="swiper-button-prev"></div>
                 </div>
@@ -1187,7 +1382,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="div-sel" id="slider-carousel-funciona-ie">
         <div class="row">
           <div class="col-12">
@@ -1233,60 +1428,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/config-carousel.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-              <h6>Baixar os SVG´s das setas e colocar na pasta img</h6>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/setas-carousel.zip" target="_blank">Setas</a></p>              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="box">
-              <h2>JS</h2>
-              <p>config-carousel.js</p>
-              <pre>
-                <code class="language-JavaScript" data-lang="JavaScript">
-                  $(&#039;#carousel-example&#039;).on(&#039;slide.bs.carousel&#039;, function (e) {
-                    var $e = $(e.relatedTarget);
-                    var idx = $e.index();
-                    var itemsPerSlide = 4;
-                    var totalItems = $(&#039;.carousel-item&#039;).length;
-
-                    if (idx &gt;= totalItems-(itemsPerSlide-1)) {
-                        var it = itemsPerSlide - (totalItems - idx);
-                        for (var i=0; i&lt;it; i++) {
-                            // append slides to end
-                            if (e.direction==&quot;left&quot;) {
-                                $(&#039;.carousel-item&#039;).eq(i).appendTo(&#039;.carousel-inner&#039;);
-                            }
-                            else {
-                                $(&#039;.carousel-item&#039;).eq(0).appendTo(&#039;.carousel-inner&#039;);
-                            }
-                        }
-                    }
-                  });
-                $(&#039;.carousel&#039;).carousel({interval: 0})
-                </code>
-              </pre>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-sm-5">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -1333,13 +1475,15 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <pre>
                 <code class="language-css" data-lang="css">
-                  // slider / carousel funciona no IE
+                  // carrossel
 
                   .carousel-item{
                     padding: 15px 40px 0 40px;
@@ -1493,7 +1637,43 @@
                     }
                   }
 
-                  // fim slider / carousel funciona no IE
+                  // fim carrossel
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/script.js&quot;&gt;&lt;/script&gt;</p>
+              <pre>
+                <code class="language-JavaScript" data-lang="JavaScript">
+                  // carrossel
+                  $(&#039;#carousel-example&#039;).on(&#039;slide.bs.carousel&#039;, function (e) {
+                    var $e = $(e.relatedTarget);
+                    var idx = $e.index();
+                    var itemsPerSlide = 4;
+                    var totalItems = $(&#039;.carousel-item&#039;).length;
+
+                    if (idx &gt;= totalItems-(itemsPerSlide-1)) {
+                        var it = itemsPerSlide - (totalItems - idx);
+                        for (var i=0; i&lt;it; i++) {
+                            // append slides to end
+                            if (e.direction==&quot;left&quot;) {
+                                $(&#039;.carousel-item&#039;).eq(i).appendTo(&#039;.carousel-inner&#039;);
+                            }
+                            else {
+                                $(&#039;.carousel-item&#039;).eq(0).appendTo(&#039;.carousel-inner&#039;);
+                            }
+                        }
+                    }
+                  });
+                $(&#039;.carousel&#039;).carousel({interval: 0})
+                // fim carrossel
                 </code>
               </pre>
             </div>
@@ -1504,7 +1684,7 @@
         <div class="row">
           <div class="col-12">
             <div class="example">
-              <h1>Accordion cards</h1>
+              <h1>Accordion abrindo um</h1>
               <div class="accordion" id="accordion">
                 <div class="card">
                   <div class="card-header" id="heading-6">
@@ -1584,27 +1764,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -1690,13 +1850,15 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <pre>
                 <code class="language-css" data-lang="css">
-                  // accordion icones
+                  // accordion abrindo um
 
                   #accordion .card .card-header h5 button{
                     width: 100%;
@@ -1736,9 +1898,18 @@
                     transition: 0.6s all;
                   }
 
-                  // fim accordion icones
+                  // fim accordion abrindo um
                 </code>
               </pre>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
             </div>
           </div>
         </div>
@@ -1747,7 +1918,7 @@
         <div class="row">
           <div class="col-12">
             <div class="example">
-              <h1>Accordion cards multilistas abertas</h1>
+              <h1>Accordion multilistas abertas</h1>
               <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="card">
                   <div class="card-header" role="tab" id="heading-1">
@@ -1827,27 +1998,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Observações para usar o componente</h5>
-              <h6>Chamar no head do html:</h6>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
-              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
-              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
-              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
-              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="box">
-              <h5>Baixar arquivos:</h5>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/bootstrap-4.2.1-dist.zip" target="_blank">Bootstrap 4.2</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/jquery-3.3.1.slim.min.js" target="_blank">Jquery 3.3.1 slim min</a></p>
-              <p><a href="https://github.com/fernandopinhel/biblioteca-de-componentes/blob/master/downloads/popper.min.js" target="_blank">Popper min</a></p>
-            </div>
-          </div>
-          <div class="col-md-6">
+
+          <div class="col-md-5">
             <div class="box">
               <h2>HTML</h2>
               <pre>
@@ -1933,13 +2085,15 @@
               </pre>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="box">
               <h2>CSS</h2>
-              <p>estilo.css</p>
+              <h6>Chamar no head do html:</h6>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;</p>
+              <p>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;</p>
               <pre>
                 <code class="language-css" data-lang="css">
-                  // accordion icones
+                  // accordion multilistas abertas
 
                   #accordion .card .card-header h5 button{
                     width: 100%;
@@ -1979,9 +2133,18 @@
                     transition: 0.6s all;
                   }
 
-                  // fim accordion icones
+                  // fim accordion multilistas abertas
                 </code>
               </pre>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <h2>JS</h2>
+              <h6>Chamar os scripts no final da página antes do fechamento da tag body:</h6>
+              <p>&lt;script src=&quot;js/jquery-3.3.1.slim.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/popper.min.js&quot;&gt;&lt;/script&gt;</p>
+              <p>&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</p>
             </div>
           </div>
         </div>
@@ -1994,6 +2157,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/combo.js"></script>
     <script src="js/login-form.js"></script>
+    <script src="libs/fontawesome/js/all.min.js"></script>
     <!-- swipper carousel nao funciona IE-->
     <script src="js/swiper.min.js"></script>
     <script src="js/config-swiper.js"></script>
