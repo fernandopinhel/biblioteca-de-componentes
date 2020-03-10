@@ -61,6 +61,16 @@ h6{
   height: 100%;
 }
 
+textarea:focus,
+input:focus,
+select:focus,
+button:focus {
+  border-color: none !important;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 // fim geral
 
 
@@ -904,6 +914,38 @@ input[type="checkbox"]:checked + label:before {
 }
 
 // fim slider / carousel funciona no IE
+
+// OWL slider por blocos
+.owl-carousel .owl-nav button.owl-prev{
+  position: absolute;
+  left: 0;
+  top: -20px;
+}
+
+.owl-carousel .owl-nav button.owl-next{
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+.owl-stage{
+  padding-top: 13px;
+}
+
+.owl-carousel .item h4{
+  text-align: center;
+}
+
+.owl-theme .owl-nav [class*=owl-]{
+  font-size: 50px !important;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover{
+  background: transparent !important;
+  color: #212529 !important;
+}
+
+// fim OWL slider por blocos
 
 // accordion icones
 
